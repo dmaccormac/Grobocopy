@@ -43,16 +43,19 @@ namespace RobocopyFrontend
             btnStartCopy = new Button();
             lblSource = new Label();
             lblDestination = new Label();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            grpOptions = new GroupBox();
+            grpOutput = new GroupBox();
+            txtCommand = new TextBox();
+            btnPreview = new Button();
+            btnAbout = new Button();
+            grpOptions.SuspendLayout();
+            grpOutput.SuspendLayout();
             SuspendLayout();
             // 
             // txtSource
             // 
             txtSource.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtSource.Location = new Point(127, 27);
+            txtSource.Location = new Point(127, 31);
             txtSource.Name = "txtSource";
             txtSource.PlaceholderText = "Source";
             txtSource.Size = new Size(411, 23);
@@ -61,7 +64,7 @@ namespace RobocopyFrontend
             // txtDestination
             // 
             txtDestination.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtDestination.Location = new Point(127, 72);
+            txtDestination.Location = new Point(127, 80);
             txtDestination.Name = "txtDestination";
             txtDestination.PlaceholderText = "Destination";
             txtDestination.Size = new Size(411, 23);
@@ -70,12 +73,12 @@ namespace RobocopyFrontend
             // txtOutput
             // 
             txtOutput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtOutput.Location = new Point(6, 22);
+            txtOutput.Location = new Point(18, 65);
             txtOutput.Multiline = true;
             txtOutput.Name = "txtOutput";
             txtOutput.ReadOnly = true;
             txtOutput.ScrollBars = ScrollBars.Vertical;
-            txtOutput.Size = new Size(651, 259);
+            txtOutput.Size = new Size(613, 223);
             txtOutput.TabIndex = 2;
             // 
             // btnBrowseSource
@@ -92,7 +95,7 @@ namespace RobocopyFrontend
             // btnBrowseDesntination
             // 
             btnBrowseDesntination.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnBrowseDesntination.Location = new Point(556, 76);
+            btnBrowseDesntination.Location = new Point(556, 80);
             btnBrowseDesntination.Name = "btnBrowseDesntination";
             btnBrowseDesntination.Size = new Size(75, 23);
             btnBrowseDesntination.TabIndex = 4;
@@ -114,7 +117,7 @@ namespace RobocopyFrontend
             // lblSource
             // 
             lblSource.AutoSize = true;
-            lblSource.Location = new Point(6, 35);
+            lblSource.Location = new Point(6, 31);
             lblSource.Name = "lblSource";
             lblSource.Size = new Size(79, 15);
             lblSource.TabIndex = 6;
@@ -129,45 +132,79 @@ namespace RobocopyFrontend
             lblDestination.TabIndex = 7;
             lblDestination.Text = "Destination Folder";
             // 
-            // groupBox1
+            // grpOptions
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(lblSource);
-            groupBox1.Controls.Add(lblDestination);
-            groupBox1.Controls.Add(txtSource);
-            groupBox1.Controls.Add(txtDestination);
-            groupBox1.Controls.Add(btnBrowseSource);
-            groupBox1.Controls.Add(btnBrowseDesntination);
-            groupBox1.Location = new Point(29, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(663, 148);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Job Options";
+            grpOptions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grpOptions.Controls.Add(lblSource);
+            grpOptions.Controls.Add(lblDestination);
+            grpOptions.Controls.Add(txtSource);
+            grpOptions.Controls.Add(txtDestination);
+            grpOptions.Controls.Add(btnBrowseSource);
+            grpOptions.Controls.Add(btnBrowseDesntination);
+            grpOptions.Location = new Point(29, 12);
+            grpOptions.Name = "grpOptions";
+            grpOptions.Size = new Size(663, 148);
+            grpOptions.TabIndex = 8;
+            grpOptions.TabStop = false;
+            grpOptions.Text = "Job Options";
             // 
-            // groupBox2
+            // grpOutput
             // 
-            groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox2.Controls.Add(txtOutput);
-            groupBox2.Location = new Point(29, 189);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(663, 287);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Output";
+            grpOutput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grpOutput.Controls.Add(txtCommand);
+            grpOutput.Controls.Add(txtOutput);
+            grpOutput.Location = new Point(29, 189);
+            grpOutput.Name = "grpOutput";
+            grpOutput.Size = new Size(663, 294);
+            grpOutput.TabIndex = 9;
+            grpOutput.TabStop = false;
+            grpOutput.Text = "Output";
+            // 
+            // txtCommand
+            // 
+            txtCommand.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtCommand.Location = new Point(18, 36);
+            txtCommand.Name = "txtCommand";
+            txtCommand.ReadOnly = true;
+            txtCommand.Size = new Size(613, 23);
+            txtCommand.TabIndex = 3;
+            // 
+            // btnPreview
+            // 
+            btnPreview.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnPreview.Location = new Point(536, 501);
+            btnPreview.Name = "btnPreview";
+            btnPreview.Size = new Size(75, 23);
+            btnPreview.TabIndex = 10;
+            btnPreview.Text = "Preview";
+            btnPreview.UseVisualStyleBackColor = true;
+            btnPreview.Click += btnPreview_Click;
+            // 
+            // btnAbout
+            // 
+            btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAbout.Location = new Point(29, 501);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Size = new Size(75, 23);
+            btnAbout.TabIndex = 11;
+            btnAbout.Text = "About";
+            btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
             // 
             // MainForm
             // 
             ClientSize = new Size(724, 536);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(btnAbout);
+            Controls.Add(btnPreview);
+            Controls.Add(grpOutput);
+            Controls.Add(grpOptions);
             Controls.Add(btnStartCopy);
             Name = "MainForm";
-            Text = "Grobocopy v0.01";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            Text = "Grobocopy v" + version;
+            grpOptions.ResumeLayout(false);
+            grpOptions.PerformLayout();
+            grpOutput.ResumeLayout(false);
+            grpOutput.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -185,7 +222,7 @@ namespace RobocopyFrontend
             ProcessStartInfo processInfo = new ProcessStartInfo
             {
                 FileName = "robocopy",
-                Arguments = $"\"{source}\" \"{destination}\" /E /R:0 /W:0",
+                Arguments = getArguments(),
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
@@ -211,6 +248,20 @@ namespace RobocopyFrontend
             }
         }
 
+        private string getArguments()
+        {
+            string source = txtSource.Text;
+            string destination = txtDestination.Text;
+            if (string.IsNullOrWhiteSpace(source) || string.IsNullOrWhiteSpace(destination))
+            {
+                return ("-1");
+
+            }
+            string command = $"\"{source}\" \"{destination}\" /E /R:0 /W:0";
+            return command;
+
+        }
+
 
         private TextBox txtSource;
         private TextBox txtDestination;
@@ -219,8 +270,34 @@ namespace RobocopyFrontend
         private Button btnBrowseDesntination;
         private Label lblSource;
         private Label lblDestination;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
+        private GroupBox grpOptions;
+        private GroupBox grpOutput;
+        private TextBox txtCommand;
+        private Button btnPreview;
+        private Button btnAbout;
         private Button btnStartCopy;
+
+        private string version = "0.02";
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+
+            txtCommand.Text = "";
+            string arguments = getArguments();
+
+            if (arguments == "-1")
+            {
+                MessageBox.Show("Please select both source and destination directories.");
+                return;
+            }
+
+            txtCommand.Text = "robocopy " + arguments;
+
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Grobocopy v" + version + "\n\nA simple GUI for Robocopy.\n\nCreated by Dan MacCormac\n\nGitHub: https://www.github.com/dmaccormac", "About Grobocopy", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
