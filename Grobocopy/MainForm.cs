@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace RobocopyFrontend
+namespace Grobocopy
 {
     public partial class MainForm : Form
     {
@@ -44,11 +44,21 @@ namespace RobocopyFrontend
             lblSource = new Label();
             lblDestination = new Label();
             grpOptions = new GroupBox();
+            tabControl1 = new TabControl();
+            tabOpt = new TabPage();
+            numLev = new NumericUpDown();
+            chkS = new CheckBox();
+            chkLev = new CheckBox();
+            chkE = new CheckBox();
+            tabPage2 = new TabPage();
             grpOutput = new GroupBox();
             txtCommand = new TextBox();
             btnPreview = new Button();
             btnAbout = new Button();
             grpOptions.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabOpt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numLev).BeginInit();
             grpOutput.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,14 +82,17 @@ namespace RobocopyFrontend
             // 
             // txtOutput
             // 
-            txtOutput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtOutput.Location = new Point(18, 65);
+            txtOutput.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtOutput.BackColor = SystemColors.Window;
+            txtOutput.ForeColor = SystemColors.WindowText;
+            txtOutput.Location = new Point(18, 64);
             txtOutput.Multiline = true;
             txtOutput.Name = "txtOutput";
             txtOutput.ReadOnly = true;
             txtOutput.ScrollBars = ScrollBars.Vertical;
-            txtOutput.Size = new Size(613, 223);
+            txtOutput.Size = new Size(613, 149);
             txtOutput.TabIndex = 2;
+            txtOutput.Text = "Command output";
             // 
             // btnBrowseSource
             // 
@@ -106,7 +119,7 @@ namespace RobocopyFrontend
             // btnStartCopy
             // 
             btnStartCopy.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnStartCopy.Location = new Point(617, 501);
+            btnStartCopy.Location = new Point(617, 549);
             btnStartCopy.Name = "btnStartCopy";
             btnStartCopy.Size = new Size(75, 23);
             btnStartCopy.TabIndex = 5;
@@ -135,6 +148,7 @@ namespace RobocopyFrontend
             // grpOptions
             // 
             grpOptions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grpOptions.Controls.Add(tabControl1);
             grpOptions.Controls.Add(lblSource);
             grpOptions.Controls.Add(lblDestination);
             grpOptions.Controls.Add(txtSource);
@@ -143,36 +157,112 @@ namespace RobocopyFrontend
             grpOptions.Controls.Add(btnBrowseDesntination);
             grpOptions.Location = new Point(29, 12);
             grpOptions.Name = "grpOptions";
-            grpOptions.Size = new Size(663, 148);
+            grpOptions.Size = new Size(663, 294);
             grpOptions.TabIndex = 8;
             grpOptions.TabStop = false;
-            grpOptions.Text = "Job Options";
+            grpOptions.Text = "Options";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(tabOpt);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(18, 110);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(622, 171);
+            tabControl1.TabIndex = 14;
+            // 
+            // tabOpt
+            // 
+            tabOpt.AutoScroll = true;
+            tabOpt.Controls.Add(numLev);
+            tabOpt.Controls.Add(chkS);
+            tabOpt.Controls.Add(chkLev);
+            tabOpt.Controls.Add(chkE);
+            tabOpt.Location = new Point(4, 24);
+            tabOpt.Name = "tabOpt";
+            tabOpt.Padding = new Padding(3);
+            tabOpt.Size = new Size(614, 143);
+            tabOpt.TabIndex = 0;
+            tabOpt.Text = "Copy";
+            tabOpt.UseVisualStyleBackColor = true;
+            // 
+            // numLev
+            // 
+            numLev.Location = new Point(35, 77);
+            numLev.Name = "numLev";
+            numLev.Size = new Size(47, 23);
+            numLev.TabIndex = 12;
+            // 
+            // chkS
+            // 
+            chkS.AutoSize = true;
+            chkS.Location = new Point(6, 6);
+            chkS.Name = "chkS";
+            chkS.Size = new Size(153, 19);
+            chkS.TabIndex = 9;
+            chkS.Text = "Copy subdirectories (/S)";
+            chkS.UseVisualStyleBackColor = true;
+            // 
+            // chkLev
+            // 
+            chkLev.AutoSize = true;
+            chkLev.Location = new Point(6, 53);
+            chkLev.Name = "chkLev";
+            chkLev.Size = new Size(356, 19);
+            chkLev.TabIndex = 10;
+            chkLev.Text = "Only copy the top n LEVels of the source directory tree (/LEV:n)";
+            chkLev.UseVisualStyleBackColor = true;
+            // 
+            // chkE
+            // 
+            chkE.AutoSize = true;
+            chkE.Location = new Point(6, 31);
+            chkE.Name = "chkE";
+            chkE.Size = new Size(277, 19);
+            chkE.TabIndex = 8;
+            chkE.Text = "Copy subdirectories, including Empty ones  (/E)";
+            chkE.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(614, 143);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "File Selection";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // grpOutput
             // 
-            grpOutput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            grpOutput.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             grpOutput.Controls.Add(txtCommand);
             grpOutput.Controls.Add(txtOutput);
-            grpOutput.Location = new Point(29, 189);
+            grpOutput.Location = new Point(29, 312);
             grpOutput.Name = "grpOutput";
-            grpOutput.Size = new Size(663, 294);
+            grpOutput.Size = new Size(663, 219);
             grpOutput.TabIndex = 9;
             grpOutput.TabStop = false;
             grpOutput.Text = "Output";
             // 
             // txtCommand
             // 
-            txtCommand.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtCommand.Location = new Point(18, 36);
+            txtCommand.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtCommand.BackColor = SystemColors.Window;
+            txtCommand.ForeColor = SystemColors.WindowText;
+            txtCommand.Location = new Point(18, 22);
             txtCommand.Name = "txtCommand";
             txtCommand.ReadOnly = true;
             txtCommand.Size = new Size(613, 23);
             txtCommand.TabIndex = 3;
+            txtCommand.Text = "Command preview";
             // 
             // btnPreview
             // 
             btnPreview.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnPreview.Location = new Point(536, 501);
+            btnPreview.Location = new Point(536, 549);
             btnPreview.Name = "btnPreview";
             btnPreview.Size = new Size(75, 23);
             btnPreview.TabIndex = 10;
@@ -183,7 +273,7 @@ namespace RobocopyFrontend
             // btnAbout
             // 
             btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAbout.Location = new Point(29, 501);
+            btnAbout.Location = new Point(29, 549);
             btnAbout.Name = "btnAbout";
             btnAbout.Size = new Size(75, 23);
             btnAbout.TabIndex = 11;
@@ -193,16 +283,20 @@ namespace RobocopyFrontend
             // 
             // MainForm
             // 
-            ClientSize = new Size(724, 536);
+            ClientSize = new Size(724, 584);
             Controls.Add(btnAbout);
             Controls.Add(btnPreview);
             Controls.Add(grpOutput);
             Controls.Add(grpOptions);
             Controls.Add(btnStartCopy);
             Name = "MainForm";
-            Text = "Grobocopy v" + version;
+            Text = "Grobocopy";
             grpOptions.ResumeLayout(false);
             grpOptions.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            tabOpt.ResumeLayout(false);
+            tabOpt.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numLev).EndInit();
             grpOutput.ResumeLayout(false);
             grpOutput.PerformLayout();
             ResumeLayout(false);
@@ -252,14 +346,38 @@ namespace RobocopyFrontend
         {
             string source = txtSource.Text;
             string destination = txtDestination.Text;
+
             if (string.IsNullOrWhiteSpace(source) || string.IsNullOrWhiteSpace(destination))
             {
-                return ("-1");
-
+                return "-1";
             }
-            string command = $"\"{source}\" \"{destination}\" /E /R:0 /W:0";
-            return command;
 
+            // Base command
+            string arguments = $"\"{source}\" \"{destination}\"";
+
+            // Add /S switch if the checkbox is checked
+            if (chkS.Checked)
+            {
+                arguments += " /S";
+            }
+
+            // Add /E switch if the checkbox is checked
+            if (chkE.Checked)
+            {
+                arguments += " /E";
+            }
+
+            // LEV:n
+            if (chkLev.Checked)
+            {
+                arguments += " /LEV:" + numLev.Value;
+            }
+
+
+            // Add other default switches
+            arguments += " /R:0 /W:0";
+
+            return arguments;
         }
 
 
@@ -276,8 +394,14 @@ namespace RobocopyFrontend
         private Button btnPreview;
         private Button btnAbout;
         private Button btnStartCopy;
-
-        private string version = "0.02";
+        private CheckBox chkE;
+        private CheckBox chkS;
+        private NumericUpDown numLev;
+        private CheckBox chkLev;
+        private TabControl tabControl1;
+        private TabPage tabOpt;
+        private TabPage tabPage2;
+        private string version = "0.03";
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
