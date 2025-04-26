@@ -1,7 +1,4 @@
-using System;
 using System.Diagnostics;
-using System.Windows.Forms;
-using System.Reflection;
 
 namespace Grobocopy
 {
@@ -36,6 +33,50 @@ namespace Grobocopy
         private Label lblANEG;
         private Label lblAPOS;
         private NumericUpDown numMT;
+        private TextBox txtIoMaxSize;
+        private CheckBox chkThreshold;
+        private CheckBox chkIoRate;
+        private CheckBox chkIoMaxSize;
+        private TextBox txtIoRate;
+        private TextBox txtThreshold;
+        private TextBox txtXA;
+        private TextBox txtIA;
+        private CheckBox chkDST;
+        private CheckBox chkFFT;
+        private CheckBox chkXX;
+        private CheckBox chkXO;
+        private CheckBox chkXL;
+        private CheckBox chkXN;
+        private CheckBox chkXC;
+        private CheckBox chkIS;
+        private CheckBox chkMIN;
+        private CheckBox chkXD;
+        private CheckBox chkXF;
+        private CheckBox chkXA;
+        private CheckBox chkIA;
+        private CheckBox chkM;
+        private CheckBox chkA;
+        private Label lblIA;
+        private Label label1;
+        private TextBox txtXD;
+        private TextBox txtXF;
+        private CheckBox chkIT;
+        private TextBox txtMIN;
+        private TextBox txtMAXLAD;
+        private CheckBox chkMINLAD;
+        private CheckBox chkMAX;
+        private CheckBox chkMAXAGE;
+        private CheckBox chkMAXLAD;
+        private CheckBox chkMINAGE;
+        private TextBox txtMAXAGE;
+        private TextBox txtMINAGE;
+        private TextBox txtMAX;
+        private CheckBox chkXJF;
+        private CheckBox chkIM;
+        private TextBox txtMINLAD;
+        private Label lblMINLAD;
+        private CheckBox chkXJ;
+        private CheckBox chkXJD;
         private SplitContainer splitContainer;
         private void InitializeComponent()
         {
@@ -105,7 +146,51 @@ namespace Grobocopy
             chkLev = new CheckBox();
             chkE = new CheckBox();
             tabThrottling = new TabPage();
+            txtThreshold = new TextBox();
+            txtIoRate = new TextBox();
+            txtIoMaxSize = new TextBox();
+            chkThreshold = new CheckBox();
+            chkIoRate = new CheckBox();
+            chkIoMaxSize = new CheckBox();
             tabSelection = new TabPage();
+            chkXJ = new CheckBox();
+            chkXJD = new CheckBox();
+            lblMINLAD = new Label();
+            txtMINLAD = new TextBox();
+            txtMAX = new TextBox();
+            txtMIN = new TextBox();
+            txtMAXAGE = new TextBox();
+            txtMAXLAD = new TextBox();
+            txtMINAGE = new TextBox();
+            chkMINLAD = new CheckBox();
+            chkMINAGE = new CheckBox();
+            chkMAXLAD = new CheckBox();
+            chkMAXAGE = new CheckBox();
+            chkMAX = new CheckBox();
+            chkXJF = new CheckBox();
+            chkIM = new CheckBox();
+            chkIT = new CheckBox();
+            txtXD = new TextBox();
+            txtXF = new TextBox();
+            label1 = new Label();
+            lblIA = new Label();
+            txtXA = new TextBox();
+            txtIA = new TextBox();
+            chkDST = new CheckBox();
+            chkFFT = new CheckBox();
+            chkXX = new CheckBox();
+            chkXO = new CheckBox();
+            chkXL = new CheckBox();
+            chkXN = new CheckBox();
+            chkXC = new CheckBox();
+            chkMIN = new CheckBox();
+            chkIS = new CheckBox();
+            chkXD = new CheckBox();
+            chkXF = new CheckBox();
+            chkXA = new CheckBox();
+            chkIA = new CheckBox();
+            chkM = new CheckBox();
+            chkA = new CheckBox();
             tabRetry = new TabPage();
             tabLogging = new TabPage();
             tabJob = new TabPage();
@@ -121,6 +206,8 @@ namespace Grobocopy
             tabCopy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMT).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numLev).BeginInit();
+            tabThrottling.SuspendLayout();
+            tabSelection.SuspendLayout();
             tabRemarks.SuspendLayout();
             grpOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
@@ -240,7 +327,7 @@ namespace Grobocopy
             tabControl1.Controls.Add(tabLogging);
             tabControl1.Controls.Add(tabJob);
             tabControl1.Controls.Add(tabRemarks);
-            tabControl1.Location = new Point(10, 97);
+            tabControl1.Location = new Point(12, 97);
             tabControl1.Multiline = true;
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -325,18 +412,18 @@ namespace Grobocopy
             lblAPOS.AutoSize = true;
             lblAPOS.Location = new Point(30, 614);
             lblAPOS.Name = "lblAPOS";
-            lblAPOS.Size = new Size(502, 15);
+            lblAPOS.Size = new Size(505, 15);
             lblAPOS.TabIndex = 62;
-            lblAPOS.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary";
+            lblAPOS.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary.";
             // 
             // lblANEG
             // 
             lblANEG.AutoSize = true;
             lblANEG.Location = new Point(24, 696);
             lblANEG.Name = "lblANEG";
-            lblANEG.Size = new Size(544, 15);
+            lblANEG.Size = new Size(547, 15);
             lblANEG.TabIndex = 61;
-            lblANEG.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary, Offline";
+            lblANEG.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary, Offline.";
             // 
             // chkMOVE
             // 
@@ -426,18 +513,18 @@ namespace Grobocopy
             lblDCOPY.AutoSize = true;
             lblDCOPY.Location = new Point(45, 1263);
             lblDCOPY.Name = "lblDCOPY";
-            lblDCOPY.Size = new Size(378, 15);
+            lblDCOPY.Size = new Size(381, 15);
             lblDCOPY.TabIndex = 51;
-            lblDCOPY.Text = " D=Data, A=Attributes, T=Timestamps, E=EAs, X=Skip alt data streams";
+            lblDCOPY.Text = " D=Data, A=Attributes, T=Timestamps, E=EAs, X=Skip alt data streams.";
             // 
             // chkNOOFFLOAD
             // 
             chkNOOFFLOAD.AutoSize = true;
             chkNOOFFLOAD.Location = new Point(8, 1317);
             chkNOOFFLOAD.Name = "chkNOOFFLOAD";
-            chkNOOFFLOAD.Size = new Size(450, 19);
+            chkNOOFFLOAD.Size = new Size(453, 19);
             chkNOOFFLOAD.TabIndex = 49;
-            chkNOOFFLOAD.Text = "/NOOFFLOAD :: copy files without using the Windows Copy Offload mechanism";
+            chkNOOFFLOAD.Text = "/NOOFFLOAD :: copy files without using the Windows Copy Offload mechanism.";
             chkNOOFFLOAD.UseVisualStyleBackColor = true;
             // 
             // chkCOMPRESS
@@ -445,9 +532,9 @@ namespace Grobocopy
             chkCOMPRESS.AutoSize = true;
             chkCOMPRESS.Location = new Point(8, 1342);
             chkCOMPRESS.Name = "chkCOMPRESS";
-            chkCOMPRESS.Size = new Size(432, 19);
+            chkCOMPRESS.Size = new Size(435, 19);
             chkCOMPRESS.TabIndex = 48;
-            chkCOMPRESS.Text = "/COMPRESS :: Request network compression during file transfer, if applicable";
+            chkCOMPRESS.Text = "/COMPRESS :: Request network compression during file transfer, if applicable.";
             chkCOMPRESS.UseVisualStyleBackColor = true;
             // 
             // chkNOCLONE
@@ -455,9 +542,9 @@ namespace Grobocopy
             chkNOCLONE.AutoSize = true;
             chkNOCLONE.Location = new Point(8, 1422);
             chkNOCLONE.Name = "chkNOCLONE";
-            chkNOCLONE.Size = new Size(355, 19);
+            chkNOCLONE.Size = new Size(358, 19);
             chkNOCLONE.TabIndex = 47;
-            chkNOCLONE.Text = "/NOCLONE :: Do not attempt block cloning as an optimization";
+            chkNOCLONE.Text = "/NOCLONE :: Do not attempt block cloning as an optimization.";
             chkNOCLONE.UseVisualStyleBackColor = true;
             // 
             // chkNODCOPY
@@ -465,9 +552,9 @@ namespace Grobocopy
             chkNODCOPY.AutoSize = true;
             chkNODCOPY.Location = new Point(8, 1292);
             chkNODCOPY.Name = "chkNODCOPY";
-            chkNODCOPY.Size = new Size(400, 19);
+            chkNODCOPY.Size = new Size(403, 19);
             chkNODCOPY.TabIndex = 46;
-            chkNODCOPY.Text = " /NODCOPY :: COPY NO directory info (by default /DCOPY:DA is done)";
+            chkNODCOPY.Text = " /NODCOPY :: COPY NO directory info (by default /DCOPY:DA is done).";
             chkNODCOPY.UseVisualStyleBackColor = true;
             // 
             // chkSPARSE
@@ -475,9 +562,9 @@ namespace Grobocopy
             chkSPARSE.AutoSize = true;
             chkSPARSE.Location = new Point(8, 1367);
             chkSPARSE.Name = "chkSPARSE";
-            chkSPARSE.Size = new Size(404, 19);
+            chkSPARSE.Size = new Size(407, 19);
             chkSPARSE.TabIndex = 45;
-            chkSPARSE.Text = "/SPARSE[:Y/N] :: Enable or disable retaining the sparse state during copy";
+            chkSPARSE.Text = "/SPARSE[:Y/N] :: Enable or disable retaining the sparse state during copy.";
             chkSPARSE.UseVisualStyleBackColor = true;
             // 
             // chkDCOPY
@@ -485,9 +572,9 @@ namespace Grobocopy
             chkDCOPY.AutoSize = true;
             chkDCOPY.Location = new Point(8, 1212);
             chkDCOPY.Name = "chkDCOPY";
-            chkDCOPY.Size = new Size(422, 19);
+            chkDCOPY.Size = new Size(425, 19);
             chkDCOPY.TabIndex = 44;
-            chkDCOPY.Text = " /DCOPY:copyflag[s] :: what to COPY for directories (default is /DCOPY:DA)";
+            chkDCOPY.Text = " /DCOPY:copyflag[s] :: what to COPY for directories (default is /DCOPY:DA).";
             chkDCOPY.UseVisualStyleBackColor = true;
             // 
             // chkMT
@@ -495,9 +582,9 @@ namespace Grobocopy
             chkMT.AutoSize = true;
             chkMT.Location = new Point(8, 1099);
             chkMT.Name = "chkMT";
-            chkMT.Size = new Size(349, 19);
+            chkMT.Size = new Size(352, 19);
             chkMT.TabIndex = 43;
-            chkMT.Text = "/MT[:n] :: Do multi-threaded copies with n threads (default 8)";
+            chkMT.Text = "/MT[:n] :: Do multi-threaded copies with n threads (default 8).";
             chkMT.UseVisualStyleBackColor = true;
             // 
             // chkIPG
@@ -505,9 +592,9 @@ namespace Grobocopy
             chkIPG.AutoSize = true;
             chkIPG.Location = new Point(8, 987);
             chkIPG.Name = "chkIPG";
-            chkIPG.Size = new Size(357, 19);
+            chkIPG.Size = new Size(360, 19);
             chkIPG.TabIndex = 42;
-            chkIPG.Text = "/IPG:n :: Inter-Packet Gap (ms), to free bandwidth on slow lines";
+            chkIPG.Text = "/IPG:n :: Inter-Packet Gap (ms), to free bandwidth on slow lines.";
             chkIPG.UseVisualStyleBackColor = true;
             // 
             // chkSJ
@@ -515,9 +602,9 @@ namespace Grobocopy
             chkSJ.AutoSize = true;
             chkSJ.Location = new Point(8, 1047);
             chkSJ.Name = "chkSJ";
-            chkSJ.Size = new Size(373, 19);
+            chkSJ.Size = new Size(376, 19);
             chkSJ.TabIndex = 41;
-            chkSJ.Text = "/SJ :: copy Junctions as junctions instead of as the junction targets";
+            chkSJ.Text = "/SJ :: copy Junctions as junctions instead of as the junction targets.";
             chkSJ.UseVisualStyleBackColor = true;
             // 
             // chkSL
@@ -525,9 +612,9 @@ namespace Grobocopy
             chkSL.AutoSize = true;
             chkSL.Location = new Point(8, 1072);
             chkSL.Name = "chkSL";
-            chkSL.Size = new Size(354, 19);
+            chkSL.Size = new Size(357, 19);
             chkSL.TabIndex = 40;
-            chkSL.Text = "/SL :: copy Symbolic Links as links instead of as the link targets";
+            chkSL.Text = "/SL :: copy Symbolic Links as links instead of as the link targets.";
             chkSL.UseVisualStyleBackColor = true;
             // 
             // chkPF
@@ -535,9 +622,9 @@ namespace Grobocopy
             chkPF.AutoSize = true;
             chkPF.Location = new Point(8, 962);
             chkPF.Name = "chkPF";
-            chkPF.Size = new Size(312, 19);
+            chkPF.Size = new Size(315, 19);
             chkPF.TabIndex = 39;
-            chkPF.Text = "/PF :: check run hours on a Per File (not per pass) basis";
+            chkPF.Text = "/PF :: check run hours on a Per File (not per pass) basis.";
             chkPF.UseVisualStyleBackColor = true;
             // 
             // chkRH
@@ -545,9 +632,9 @@ namespace Grobocopy
             chkRH.AutoSize = true;
             chkRH.Location = new Point(8, 897);
             chkRH.Name = "chkRH";
-            chkRH.Size = new Size(410, 19);
+            chkRH.Size = new Size(413, 19);
             chkRH.TabIndex = 38;
-            chkRH.Text = "/RH:hhmm-hhmm :: Run Hours - times when new copies may be started";
+            chkRH.Text = "/RH:hhmm-hhmm :: Run Hours - times when new copies may be started.";
             chkRH.UseVisualStyleBackColor = true;
             // 
             // chkMOT
@@ -555,9 +642,9 @@ namespace Grobocopy
             chkMOT.AutoSize = true;
             chkMOT.Location = new Point(8, 847);
             chkMOT.Name = "chkMOT";
-            chkMOT.Size = new Size(387, 19);
+            chkMOT.Size = new Size(390, 19);
             chkMOT.TabIndex = 37;
-            chkMOT.Text = "/MOT:m :: MOnitor source; run again in m minutes Time, if changed";
+            chkMOT.Text = "/MOT:m :: MOnitor source; run again in m minutes Time, if changed.";
             chkMOT.UseVisualStyleBackColor = true;
             // 
             // chkMON
@@ -565,9 +652,9 @@ namespace Grobocopy
             chkMON.AutoSize = true;
             chkMON.Location = new Point(8, 802);
             chkMON.Name = "chkMON";
-            chkMON.Size = new Size(397, 19);
+            chkMON.Size = new Size(400, 19);
             chkMON.TabIndex = 36;
-            chkMON.Text = "/MON:n :: MONitor source; run again when more than n changes seen";
+            chkMON.Text = "/MON:n :: MONitor source; run again when more than n changes seen.";
             chkMON.UseVisualStyleBackColor = true;
             // 
             // chk256
@@ -575,9 +662,9 @@ namespace Grobocopy
             chk256.AutoSize = true;
             chk256.Location = new Point(8, 777);
             chk256.Name = "chk256";
-            chk256.Size = new Size(321, 19);
+            chk256.Size = new Size(324, 19);
             chk256.TabIndex = 35;
-            chk256.Text = "/256 :: turn off very long path (> 256 characters) support";
+            chk256.Text = "/256 :: turn off very long path (> 256 characters) support.";
             chk256.UseVisualStyleBackColor = true;
             // 
             // chkFAT
@@ -585,9 +672,9 @@ namespace Grobocopy
             chkFAT.AutoSize = true;
             chkFAT.Location = new Point(8, 752);
             chkFAT.Name = "chkFAT";
-            chkFAT.Size = new Size(335, 19);
+            chkFAT.Size = new Size(338, 19);
             chkFAT.TabIndex = 34;
-            chkFAT.Text = "/FAT :: create destination files using 8.3 FAT file names only";
+            chkFAT.Text = "/FAT :: create destination files using 8.3 FAT file names only.";
             chkFAT.UseVisualStyleBackColor = true;
             // 
             // chkCREATE
@@ -595,9 +682,9 @@ namespace Grobocopy
             chkCREATE.AutoSize = true;
             chkCREATE.Location = new Point(8, 727);
             chkCREATE.Name = "chkCREATE";
-            chkCREATE.Size = new Size(335, 19);
+            chkCREATE.Size = new Size(338, 19);
             chkCREATE.TabIndex = 33;
-            chkCREATE.Text = "/CREATE :: CREATE directory tree and zero-length files only";
+            chkCREATE.Text = "/CREATE :: CREATE directory tree and zero-length files only.";
             chkCREATE.UseVisualStyleBackColor = true;
             // 
             // chkANEG
@@ -605,9 +692,9 @@ namespace Grobocopy
             chkANEG.AutoSize = true;
             chkANEG.Location = new Point(6, 645);
             chkANEG.Name = "chkANEG";
-            chkANEG.Size = new Size(371, 19);
+            chkANEG.Size = new Size(374, 19);
             chkANEG.TabIndex = 32;
-            chkANEG.Text = "/A-:[RASHCNETO]:: remove the given Attributes from copied files";
+            chkANEG.Text = "/A-:[RASHCNETO]:: remove the given Attributes from copied files.";
             chkANEG.UseVisualStyleBackColor = true;
             // 
             // chkAPOS
@@ -615,9 +702,9 @@ namespace Grobocopy
             chkAPOS.AutoSize = true;
             chkAPOS.Location = new Point(8, 565);
             chkAPOS.Name = "chkAPOS";
-            chkAPOS.Size = new Size(334, 19);
+            chkAPOS.Size = new Size(337, 19);
             chkAPOS.TabIndex = 31;
-            chkAPOS.Text = "/A+:[RASHCNET] :: add the given Attributes to copied files";
+            chkAPOS.Text = "/A+:[RASHCNET] :: add the given Attributes to copied files.";
             chkAPOS.UseVisualStyleBackColor = true;
             // 
             // chkMOV
@@ -625,9 +712,9 @@ namespace Grobocopy
             chkMOV.AutoSize = true;
             chkMOV.Location = new Point(8, 515);
             chkMOV.Name = "chkMOV";
-            chkMOV.Size = new Size(309, 19);
+            chkMOV.Size = new Size(312, 19);
             chkMOV.TabIndex = 29;
-            chkMOV.Text = "/MOV :: MOVe files (delete from source after copying)";
+            chkMOV.Text = "/MOV :: MOVe files (delete from source after copying).";
             chkMOV.UseVisualStyleBackColor = true;
             // 
             // chkMIR
@@ -635,9 +722,9 @@ namespace Grobocopy
             chkMIR.AutoSize = true;
             chkMIR.Location = new Point(8, 490);
             chkMIR.Name = "chkMIR";
-            chkMIR.Size = new Size(345, 19);
+            chkMIR.Size = new Size(348, 19);
             chkMIR.TabIndex = 28;
-            chkMIR.Text = "/MIR :: MIRror a directory tree (equivalent to /E plus /PURGE)";
+            chkMIR.Text = "/MIR :: MIRror a directory tree (equivalent to /E plus /PURGE).";
             chkMIR.UseVisualStyleBackColor = true;
             // 
             // chkPURGE
@@ -645,9 +732,9 @@ namespace Grobocopy
             chkPURGE.AutoSize = true;
             chkPURGE.Location = new Point(8, 465);
             chkPURGE.Name = "chkPURGE";
-            chkPURGE.Size = new Size(339, 19);
+            chkPURGE.Size = new Size(342, 19);
             chkPURGE.TabIndex = 27;
-            chkPURGE.Text = "/PURGE :: delete dest files/dirs that no longer exist in source";
+            chkPURGE.Text = "/PURGE :: delete dest files/dirs that no longer exist in source.";
             chkPURGE.UseVisualStyleBackColor = true;
             // 
             // chkTIMFIX
@@ -655,9 +742,9 @@ namespace Grobocopy
             chkTIMFIX.AutoSize = true;
             chkTIMFIX.Location = new Point(8, 440);
             chkTIMFIX.Name = "chkTIMFIX";
-            chkTIMFIX.Size = new Size(305, 19);
+            chkTIMFIX.Size = new Size(308, 19);
             chkTIMFIX.TabIndex = 26;
-            chkTIMFIX.Text = "/TIMFIX :: FIX file TIMes on all files, even skipped files";
+            chkTIMFIX.Text = "/TIMFIX :: FIX file TIMes on all files, even skipped files.";
             chkTIMFIX.UseVisualStyleBackColor = true;
             // 
             // chkSECFIX
@@ -665,9 +752,9 @@ namespace Grobocopy
             chkSECFIX.AutoSize = true;
             chkSECFIX.Location = new Point(8, 415);
             chkSECFIX.Name = "chkSECFIX";
-            chkSECFIX.Size = new Size(316, 19);
+            chkSECFIX.Size = new Size(319, 19);
             chkSECFIX.TabIndex = 25;
-            chkSECFIX.Text = "/SECFIX :: FIX file SECurity on all files, even skipped files";
+            chkSECFIX.Text = "/SECFIX :: FIX file SECurity on all files, even skipped files.";
             chkSECFIX.UseVisualStyleBackColor = true;
             // 
             // chkNOCOPY
@@ -675,9 +762,9 @@ namespace Grobocopy
             chkNOCOPY.AutoSize = true;
             chkNOCOPY.Location = new Point(8, 390);
             chkNOCOPY.Name = "chkNOCOPY";
-            chkNOCOPY.Size = new Size(300, 19);
+            chkNOCOPY.Size = new Size(303, 19);
             chkNOCOPY.TabIndex = 24;
-            chkNOCOPY.Text = "/NOCOPY :: COPY NO file info (useful with /PURGE)";
+            chkNOCOPY.Text = "/NOCOPY :: COPY NO file info (useful with /PURGE).";
             chkNOCOPY.UseVisualStyleBackColor = true;
             // 
             // chkCOPYALL
@@ -685,9 +772,9 @@ namespace Grobocopy
             chkCOPYALL.AutoSize = true;
             chkCOPYALL.Location = new Point(8, 365);
             chkCOPYALL.Name = "chkCOPYALL";
-            chkCOPYALL.Size = new Size(357, 19);
+            chkCOPYALL.Size = new Size(360, 19);
             chkCOPYALL.TabIndex = 23;
-            chkCOPYALL.Text = "/COPYALL :: COPY ALL file info (equivalent to /COPY:DATSOU)";
+            chkCOPYALL.Text = "/COPYALL :: COPY ALL file info (equivalent to /COPY:DATSOU).";
             chkCOPYALL.UseVisualStyleBackColor = true;
             // 
             // chkSEC
@@ -695,9 +782,9 @@ namespace Grobocopy
             chkSEC.AutoSize = true;
             chkSEC.Location = new Point(7, 341);
             chkSEC.Name = "chkSEC";
-            chkSEC.Size = new Size(336, 19);
+            chkSEC.Size = new Size(339, 19);
             chkSEC.TabIndex = 22;
-            chkSEC.Text = "/SEC :: copy files with SECurity (equivalent to /COPY:DATS)";
+            chkSEC.Text = "/SEC :: copy files with SECurity (equivalent to /COPY:DATS).";
             chkSEC.UseVisualStyleBackColor = true;
             // 
             // txtCOPY
@@ -713,18 +800,18 @@ namespace Grobocopy
             lblCOPY.AutoSize = true;
             lblCOPY.Location = new Point(34, 301);
             lblCOPY.Name = "lblCOPY";
-            lblCOPY.Size = new Size(455, 30);
+            lblCOPY.Size = new Size(458, 30);
             lblCOPY.TabIndex = 19;
-            lblCOPY.Text = "D=Data, A=Attributes, T=Timestamps, X=Skip alt data streams (X ignored if /B or /ZB\r\nS=Security=NTFS ACLs, O=Owner info, U=aUditing info";
+            lblCOPY.Text = "D=Data, A=Attributes, T=Timestamps, X=Skip alt data streams (X ignored if /B or /ZB.\r\nS=Security=NTFS ACLs, O=Owner info, U=aUditing info.";
             // 
             // chkCOPY
             // 
             chkCOPY.AutoSize = true;
-            chkCOPY.Location = new Point(9, 252);
+            chkCOPY.Location = new Point(8, 252);
             chkCOPY.Name = "chkCOPY";
-            chkCOPY.Size = new Size(375, 19);
+            chkCOPY.Size = new Size(378, 19);
             chkCOPY.TabIndex = 18;
-            chkCOPY.Text = "/COPY:copyflag[s] :: what to COPY for files (default is /COPY:DAT)";
+            chkCOPY.Text = "/COPY:copyflag[s] :: what to COPY for files (default is /COPY:DAT).";
             chkCOPY.UseVisualStyleBackColor = true;
             // 
             // chkEFSRAW
@@ -732,9 +819,9 @@ namespace Grobocopy
             chkEFSRAW.AutoSize = true;
             chkEFSRAW.Location = new Point(8, 228);
             chkEFSRAW.Name = "chkEFSRAW";
-            chkEFSRAW.Size = new Size(303, 19);
+            chkEFSRAW.Size = new Size(306, 19);
             chkEFSRAW.TabIndex = 17;
-            chkEFSRAW.Text = "/EFSRAW :: copy all encrypted files in EFS RAW mode";
+            chkEFSRAW.Text = "/EFSRAW :: copy all encrypted files in EFS RAW mode.";
             chkEFSRAW.UseVisualStyleBackColor = true;
             // 
             // chkJ
@@ -742,9 +829,9 @@ namespace Grobocopy
             chkJ.AutoSize = true;
             chkJ.Location = new Point(8, 203);
             chkJ.Name = "chkJ";
-            chkJ.Size = new Size(350, 19);
+            chkJ.Size = new Size(353, 19);
             chkJ.TabIndex = 16;
-            chkJ.Text = " /J :: copy using unbuffered I/O (recommended for large files)";
+            chkJ.Text = " /J :: copy using unbuffered I/O (recommended for large files).";
             chkJ.UseVisualStyleBackColor = true;
             // 
             // chkZB
@@ -752,9 +839,9 @@ namespace Grobocopy
             chkZB.AutoSize = true;
             chkZB.Location = new Point(8, 178);
             chkZB.Name = "chkZB";
-            chkZB.Size = new Size(353, 19);
+            chkZB.Size = new Size(356, 19);
             chkZB.TabIndex = 15;
-            chkZB.Text = "/ZB :: use restartable mode; if access denied use Backup mode";
+            chkZB.Text = "/ZB :: use restartable mode; if access denied use Backup mode.";
             chkZB.UseVisualStyleBackColor = true;
             // 
             // chkB
@@ -762,9 +849,9 @@ namespace Grobocopy
             chkB.AutoSize = true;
             chkB.Location = new Point(8, 153);
             chkB.Name = "chkB";
-            chkB.Size = new Size(189, 19);
+            chkB.Size = new Size(192, 19);
             chkB.TabIndex = 14;
-            chkB.Text = "/B :: copy files in Backup mode";
+            chkB.Text = "/B :: copy files in Backup mode.";
             chkB.UseVisualStyleBackColor = true;
             // 
             // chkZ
@@ -772,9 +859,9 @@ namespace Grobocopy
             chkZ.AutoSize = true;
             chkZ.Location = new Point(8, 128);
             chkZ.Name = "chkZ";
-            chkZ.Size = new Size(205, 19);
+            chkZ.Size = new Size(208, 19);
             chkZ.TabIndex = 13;
-            chkZ.Text = "/Z :: copy files in restartable mode";
+            chkZ.Text = "/Z :: copy files in restartable mode.";
             chkZ.UseVisualStyleBackColor = true;
             // 
             // numLev
@@ -789,9 +876,9 @@ namespace Grobocopy
             chkS.AutoSize = true;
             chkS.Location = new Point(8, 13);
             chkS.Name = "chkS";
-            chkS.Size = new Size(263, 19);
+            chkS.Size = new Size(266, 19);
             chkS.TabIndex = 9;
-            chkS.Text = "/S :: copy Subdirectories, but not empty ones";
+            chkS.Text = "/S :: copy Subdirectories, but not empty ones.";
             chkS.UseVisualStyleBackColor = true;
             chkS.CheckedChanged += chkS_CheckedChanged;
             // 
@@ -800,9 +887,9 @@ namespace Grobocopy
             chkLev.AutoSize = true;
             chkLev.Location = new Point(8, 63);
             chkLev.Name = "chkLev";
-            chkLev.Size = new Size(358, 19);
+            chkLev.Size = new Size(361, 19);
             chkLev.TabIndex = 10;
-            chkLev.Text = " /LEV:n :: only copy the top n LEVels of the source directory tree";
+            chkLev.Text = " /LEV:n :: only copy the top n LEVels of the source directory tree.";
             chkLev.UseVisualStyleBackColor = true;
             // 
             // chkE
@@ -810,13 +897,20 @@ namespace Grobocopy
             chkE.AutoSize = true;
             chkE.Location = new Point(8, 38);
             chkE.Name = "chkE";
-            chkE.Size = new Size(273, 19);
+            chkE.Size = new Size(276, 19);
             chkE.TabIndex = 8;
-            chkE.Text = "/E :: copy subdirectories, including Empty ones";
+            chkE.Text = "/E :: copy subdirectories, including Empty ones.";
             chkE.UseVisualStyleBackColor = true;
             // 
             // tabThrottling
             // 
+            tabThrottling.AutoScroll = true;
+            tabThrottling.Controls.Add(txtThreshold);
+            tabThrottling.Controls.Add(txtIoRate);
+            tabThrottling.Controls.Add(txtIoMaxSize);
+            tabThrottling.Controls.Add(chkThreshold);
+            tabThrottling.Controls.Add(chkIoRate);
+            tabThrottling.Controls.Add(chkIoMaxSize);
             tabThrottling.Location = new Point(4, 24);
             tabThrottling.Name = "tabThrottling";
             tabThrottling.Padding = new Padding(3);
@@ -825,14 +919,464 @@ namespace Grobocopy
             tabThrottling.Text = "File Throttling";
             tabThrottling.UseVisualStyleBackColor = true;
             // 
+            // txtThreshold
+            // 
+            txtThreshold.Location = new Point(35, 172);
+            txtThreshold.Name = "txtThreshold";
+            txtThreshold.Size = new Size(100, 23);
+            txtThreshold.TabIndex = 12;
+            txtThreshold.Text = "n[KMG]";
+            // 
+            // txtIoRate
+            // 
+            txtIoRate.Location = new Point(35, 113);
+            txtIoRate.Name = "txtIoRate";
+            txtIoRate.Size = new Size(100, 23);
+            txtIoRate.TabIndex = 11;
+            txtIoRate.Text = "n[KMG]";
+            // 
+            // txtIoMaxSize
+            // 
+            txtIoMaxSize.Location = new Point(35, 44);
+            txtIoMaxSize.Name = "txtIoMaxSize";
+            txtIoMaxSize.Size = new Size(100, 23);
+            txtIoMaxSize.TabIndex = 3;
+            txtIoMaxSize.Text = "n[KMG]";
+            // 
+            // chkThreshold
+            // 
+            chkThreshold.AutoSize = true;
+            chkThreshold.Location = new Point(13, 147);
+            chkThreshold.Name = "chkThreshold";
+            chkThreshold.Size = new Size(480, 19);
+            chkThreshold.TabIndex = 2;
+            chkThreshold.Text = " /Threshold:n[KMG] :: File size threshold for throttling, in n [KMG] bytes (see Remarks).";
+            chkThreshold.UseVisualStyleBackColor = true;
+            // 
+            // chkIoRate
+            // 
+            chkIoRate.AutoSize = true;
+            chkIoRate.Location = new Point(13, 88);
+            chkIoRate.Name = "chkIoRate";
+            chkIoRate.Size = new Size(374, 19);
+            chkIoRate.TabIndex = 1;
+            chkIoRate.Text = "/IoRate:n[KMG] :: Requested i/o rate, in n [KMG] bytes per second.";
+            chkIoRate.UseVisualStyleBackColor = true;
+            // 
+            // chkIoMaxSize
+            // 
+            chkIoMaxSize.AutoSize = true;
+            chkIoMaxSize.Location = new Point(13, 19);
+            chkIoMaxSize.Name = "chkIoMaxSize";
+            chkIoMaxSize.Size = new Size(469, 19);
+            chkIoMaxSize.TabIndex = 0;
+            chkIoMaxSize.Text = "/IoMaxSize:n[KMG] :: Requested max i/o size per {read,write} cycle, in n [KMG] bytes.";
+            chkIoMaxSize.UseVisualStyleBackColor = true;
+            // 
             // tabSelection
             // 
+            tabSelection.AutoScroll = true;
+            tabSelection.Controls.Add(chkXJ);
+            tabSelection.Controls.Add(chkXJD);
+            tabSelection.Controls.Add(lblMINLAD);
+            tabSelection.Controls.Add(txtMINLAD);
+            tabSelection.Controls.Add(txtMAX);
+            tabSelection.Controls.Add(txtMIN);
+            tabSelection.Controls.Add(txtMAXAGE);
+            tabSelection.Controls.Add(txtMAXLAD);
+            tabSelection.Controls.Add(txtMINAGE);
+            tabSelection.Controls.Add(chkMINLAD);
+            tabSelection.Controls.Add(chkMINAGE);
+            tabSelection.Controls.Add(chkMAXLAD);
+            tabSelection.Controls.Add(chkMAXAGE);
+            tabSelection.Controls.Add(chkMAX);
+            tabSelection.Controls.Add(chkXJF);
+            tabSelection.Controls.Add(chkIM);
+            tabSelection.Controls.Add(chkIT);
+            tabSelection.Controls.Add(txtXD);
+            tabSelection.Controls.Add(txtXF);
+            tabSelection.Controls.Add(label1);
+            tabSelection.Controls.Add(lblIA);
+            tabSelection.Controls.Add(txtXA);
+            tabSelection.Controls.Add(txtIA);
+            tabSelection.Controls.Add(chkDST);
+            tabSelection.Controls.Add(chkFFT);
+            tabSelection.Controls.Add(chkXX);
+            tabSelection.Controls.Add(chkXO);
+            tabSelection.Controls.Add(chkXL);
+            tabSelection.Controls.Add(chkXN);
+            tabSelection.Controls.Add(chkXC);
+            tabSelection.Controls.Add(chkMIN);
+            tabSelection.Controls.Add(chkIS);
+            tabSelection.Controls.Add(chkXD);
+            tabSelection.Controls.Add(chkXF);
+            tabSelection.Controls.Add(chkXA);
+            tabSelection.Controls.Add(chkIA);
+            tabSelection.Controls.Add(chkM);
+            tabSelection.Controls.Add(chkA);
             tabSelection.Location = new Point(4, 24);
             tabSelection.Name = "tabSelection";
             tabSelection.Size = new Size(705, 175);
             tabSelection.TabIndex = 2;
             tabSelection.Text = "File Selection";
             tabSelection.UseVisualStyleBackColor = true;
+            // 
+            // chkXJ
+            // 
+            chkXJ.AutoSize = true;
+            chkXJ.Location = new Point(12, 977);
+            chkXJ.Name = "chkXJ";
+            chkXJ.Size = new Size(444, 19);
+            chkXJ.TabIndex = 85;
+            chkXJ.Text = "/XJ :: eXclude symbolic links (for both files and directories) and Junction points.";
+            chkXJ.UseVisualStyleBackColor = true;
+            // 
+            // chkXJD
+            // 
+            chkXJD.AutoSize = true;
+            chkXJD.Location = new Point(12, 1002);
+            chkXJD.Name = "chkXJD";
+            chkXJD.Size = new Size(370, 19);
+            chkXJD.TabIndex = 83;
+            chkXJD.Text = "/XJD :: eXclude symbolic links for Directories and Junction points.";
+            chkXJD.UseVisualStyleBackColor = true;
+            // 
+            // lblMINLAD
+            // 
+            lblMINLAD.AutoSize = true;
+            lblMINLAD.Location = new Point(28, 903);
+            lblMINLAD.Name = "lblMINLAD";
+            lblMINLAD.Size = new Size(303, 15);
+            lblMINLAD.TabIndex = 82;
+            lblMINLAD.Text = " (If n < 1900 then n = n days, else n = YYYYMMDD date).";
+            // 
+            // txtMINLAD
+            // 
+            txtMINLAD.Location = new Point(28, 872);
+            txtMINLAD.Name = "txtMINLAD";
+            txtMINLAD.Size = new Size(100, 23);
+            txtMINLAD.TabIndex = 81;
+            txtMINLAD.Text = "n";
+            // 
+            // txtMAX
+            // 
+            txtMAX.Location = new Point(28, 566);
+            txtMAX.Name = "txtMAX";
+            txtMAX.Size = new Size(100, 23);
+            txtMAX.TabIndex = 80;
+            txtMAX.Text = "n";
+            // 
+            // txtMIN
+            // 
+            txtMIN.Location = new Point(28, 631);
+            txtMIN.Name = "txtMIN";
+            txtMIN.Size = new Size(100, 23);
+            txtMIN.TabIndex = 79;
+            txtMIN.Text = "n";
+            // 
+            // txtMAXAGE
+            // 
+            txtMAXAGE.Location = new Point(28, 694);
+            txtMAXAGE.Name = "txtMAXAGE";
+            txtMAXAGE.Size = new Size(100, 23);
+            txtMAXAGE.TabIndex = 78;
+            txtMAXAGE.Text = "n";
+            // 
+            // txtMAXLAD
+            // 
+            txtMAXLAD.Location = new Point(28, 817);
+            txtMAXLAD.Name = "txtMAXLAD";
+            txtMAXLAD.Size = new Size(100, 23);
+            txtMAXLAD.TabIndex = 77;
+            txtMAXLAD.Text = "n";
+            // 
+            // txtMINAGE
+            // 
+            txtMINAGE.Location = new Point(28, 752);
+            txtMINAGE.Name = "txtMINAGE";
+            txtMINAGE.Size = new Size(100, 23);
+            txtMINAGE.TabIndex = 76;
+            txtMINAGE.Text = "n";
+            // 
+            // chkMINLAD
+            // 
+            chkMINLAD.AutoSize = true;
+            chkMINLAD.Location = new Point(12, 847);
+            chkMINLAD.Name = "chkMINLAD";
+            chkMINLAD.Size = new Size(389, 19);
+            chkMINLAD.TabIndex = 74;
+            chkMINLAD.Text = "/MINLAD:n :: MINimum Last Access Date - exclude files used since n.";
+            chkMINLAD.UseVisualStyleBackColor = true;
+            // 
+            // chkMINAGE
+            // 
+            chkMINAGE.AutoSize = true;
+            chkMINAGE.Location = new Point(12, 727);
+            chkMINAGE.Name = "chkMINAGE";
+            chkMINAGE.Size = new Size(402, 19);
+            chkMINAGE.TabIndex = 73;
+            chkMINAGE.Text = "/MINAGE:n :: MINimum file AGE - exclude files newer than n days/date.";
+            chkMINAGE.UseVisualStyleBackColor = true;
+            // 
+            // chkMAXLAD
+            // 
+            chkMAXLAD.AutoSize = true;
+            chkMAXLAD.Location = new Point(12, 792);
+            chkMAXLAD.Name = "chkMAXLAD";
+            chkMAXLAD.Size = new Size(409, 19);
+            chkMAXLAD.TabIndex = 72;
+            chkMAXLAD.Text = "/MAXLAD:n :: MAXimum Last Access Date - exclude files unused since n.";
+            chkMAXLAD.UseVisualStyleBackColor = true;
+            // 
+            // chkMAXAGE
+            // 
+            chkMAXAGE.AutoSize = true;
+            chkMAXAGE.Location = new Point(12, 670);
+            chkMAXAGE.Name = "chkMAXAGE";
+            chkMAXAGE.Size = new Size(403, 19);
+            chkMAXAGE.TabIndex = 71;
+            chkMAXAGE.Text = "/MAXAGE:n :: MAXimum file AGE - exclude files older than n days/date.";
+            chkMAXAGE.UseVisualStyleBackColor = true;
+            // 
+            // chkMAX
+            // 
+            chkMAX.AutoSize = true;
+            chkMAX.Location = new Point(12, 543);
+            chkMAX.Name = "chkMAX";
+            chkMAX.Size = new Size(356, 19);
+            chkMAX.TabIndex = 70;
+            chkMAX.Text = "MAX:n :: MAXimum file size - exclude files bigger than n bytes.";
+            chkMAX.UseVisualStyleBackColor = true;
+            // 
+            // chkXJF
+            // 
+            chkXJF.AutoSize = true;
+            chkXJF.Location = new Point(12, 1027);
+            chkXJF.Name = "chkXJF";
+            chkXJF.Size = new Size(228, 19);
+            chkXJF.TabIndex = 69;
+            chkXJF.Text = "/XJF :: eXclude symbolic links for Files.";
+            chkXJF.UseVisualStyleBackColor = true;
+            // 
+            // chkIM
+            // 
+            chkIM.AutoSize = true;
+            chkIM.Location = new Point(12, 1052);
+            chkIM.Name = "chkIM";
+            chkIM.Size = new Size(307, 19);
+            chkIM.TabIndex = 68;
+            chkIM.Text = " /IM :: Include Modified files (differing change times).";
+            chkIM.UseVisualStyleBackColor = true;
+            // 
+            // chkIT
+            // 
+            chkIT.AutoSize = true;
+            chkIT.Location = new Point(12, 518);
+            chkIT.Name = "chkIT";
+            chkIT.Size = new Size(168, 19);
+            chkIT.TabIndex = 67;
+            chkIT.Text = "/IT :: Include Tweaked files.";
+            chkIT.UseVisualStyleBackColor = true;
+            // 
+            // txtXD
+            // 
+            txtXD.Location = new Point(36, 323);
+            txtXD.Name = "txtXD";
+            txtXD.Size = new Size(100, 23);
+            txtXD.TabIndex = 66;
+            txtXD.Text = "[dirs]...";
+            // 
+            // txtXF
+            // 
+            txtXF.Location = new Point(36, 258);
+            txtXF.Name = "txtXF";
+            txtXF.Size = new Size(100, 23);
+            txtXF.TabIndex = 65;
+            txtXF.Text = "[file]...";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(36, 208);
+            label1.Name = "label1";
+            label1.Size = new Size(547, 15);
+            label1.TabIndex = 64;
+            label1.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary, Offline.";
+            // 
+            // lblIA
+            // 
+            lblIA.AutoSize = true;
+            lblIA.Location = new Point(49, 118);
+            lblIA.Name = "lblIA";
+            lblIA.Size = new Size(505, 15);
+            lblIA.TabIndex = 63;
+            lblIA.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary.";
+            // 
+            // txtXA
+            // 
+            txtXA.Location = new Point(46, 176);
+            txtXA.Name = "txtXA";
+            txtXA.Size = new Size(100, 23);
+            txtXA.TabIndex = 16;
+            txtXA.Text = "[RASHCNETO]";
+            // 
+            // txtIA
+            // 
+            txtIA.Location = new Point(46, 88);
+            txtIA.Name = "txtIA";
+            txtIA.Size = new Size(100, 23);
+            txtIA.TabIndex = 15;
+            txtIA.Text = "[RASHCNETO]";
+            // 
+            // chkDST
+            // 
+            chkDST.AutoSize = true;
+            chkDST.Location = new Point(12, 952);
+            chkDST.Name = "chkDST";
+            chkDST.Size = new Size(318, 19);
+            chkDST.TabIndex = 14;
+            chkDST.Text = " /DST :: compensate for one-hour DST time differences.";
+            chkDST.UseVisualStyleBackColor = true;
+            // 
+            // chkFFT
+            // 
+            chkFFT.AutoSize = true;
+            chkFFT.Location = new Point(12, 927);
+            chkFFT.Name = "chkFFT";
+            chkFFT.Size = new Size(303, 19);
+            chkFFT.TabIndex = 13;
+            chkFFT.Text = "/FFT :: assume FAT File Times (2-second granularity).";
+            chkFFT.UseVisualStyleBackColor = true;
+            // 
+            // chkXX
+            // 
+            chkXX.AutoSize = true;
+            chkXX.Location = new Point(12, 444);
+            chkXX.Name = "chkXX";
+            chkXX.Size = new Size(237, 19);
+            chkXX.TabIndex = 12;
+            chkXX.Text = "/XX :: eXclude eXtra files and directories.";
+            chkXX.UseVisualStyleBackColor = true;
+            // 
+            // chkXO
+            // 
+            chkXO.AutoSize = true;
+            chkXO.Location = new Point(12, 419);
+            chkXO.Name = "chkXO";
+            chkXO.Size = new Size(160, 19);
+            chkXO.TabIndex = 11;
+            chkXO.Text = "/XO :: eXclude Older files.";
+            chkXO.UseVisualStyleBackColor = true;
+            // 
+            // chkXL
+            // 
+            chkXL.AutoSize = true;
+            chkXL.Location = new Point(12, 469);
+            chkXL.Name = "chkXL";
+            chkXL.Size = new Size(244, 19);
+            chkXL.TabIndex = 10;
+            chkXL.Text = "/XL :: eXclude Lonely files and directories.";
+            chkXL.UseVisualStyleBackColor = true;
+            // 
+            // chkXN
+            // 
+            chkXN.AutoSize = true;
+            chkXN.Location = new Point(12, 394);
+            chkXN.Name = "chkXN";
+            chkXN.Size = new Size(165, 19);
+            chkXN.TabIndex = 9;
+            chkXN.Text = "/XN :: eXclude Newer files.";
+            chkXN.UseVisualStyleBackColor = true;
+            // 
+            // chkXC
+            // 
+            chkXC.AutoSize = true;
+            chkXC.Location = new Point(12, 365);
+            chkXC.Name = "chkXC";
+            chkXC.Size = new Size(178, 19);
+            chkXC.TabIndex = 8;
+            chkXC.Text = "/XC :: eXclude Changed files.";
+            chkXC.UseVisualStyleBackColor = true;
+            // 
+            // chkMIN
+            // 
+            chkMIN.AutoSize = true;
+            chkMIN.Location = new Point(12, 606);
+            chkMIN.Name = "chkMIN";
+            chkMIN.Size = new Size(362, 19);
+            chkMIN.TabIndex = 7;
+            chkMIN.Text = " /MIN:n :: MINimum file size - exclude files smaller than n bytes.";
+            chkMIN.UseVisualStyleBackColor = true;
+            // 
+            // chkIS
+            // 
+            chkIS.AutoSize = true;
+            chkIS.Location = new Point(12, 494);
+            chkIS.Name = "chkIS";
+            chkIS.Size = new Size(150, 19);
+            chkIS.TabIndex = 6;
+            chkIS.Text = "/IS :: Include Same files.";
+            chkIS.UseVisualStyleBackColor = true;
+            // 
+            // chkXD
+            // 
+            chkXD.AutoSize = true;
+            chkXD.Location = new Point(12, 301);
+            chkXD.Name = "chkXD";
+            chkXD.Size = new Size(384, 19);
+            chkXD.TabIndex = 5;
+            chkXD.Text = " /XD dirs [dirs]... :: eXclude Directories matching given names/paths.";
+            chkXD.UseVisualStyleBackColor = true;
+            // 
+            // chkXF
+            // 
+            chkXF.AutoSize = true;
+            chkXF.Location = new Point(12, 233);
+            chkXF.Name = "chkXF";
+            chkXF.Size = new Size(395, 19);
+            chkXF.TabIndex = 4;
+            chkXF.Text = "/XF file [file]... :: eXclude Files matching given names/paths/wildcards.";
+            chkXF.UseVisualStyleBackColor = true;
+            // 
+            // chkXA
+            // 
+            chkXA.AutoSize = true;
+            chkXA.Location = new Point(12, 151);
+            chkXA.Name = "chkXA";
+            chkXA.Size = new Size(393, 19);
+            chkXA.TabIndex = 3;
+            chkXA.Text = "/XA:[RASHCNETO] :: eXclude files with any of the given Attributes set.";
+            chkXA.UseVisualStyleBackColor = true;
+            // 
+            // chkIA
+            // 
+            chkIA.AutoSize = true;
+            chkIA.Location = new Point(12, 63);
+            chkIA.Name = "chkIA";
+            chkIA.Size = new Size(412, 19);
+            chkIA.TabIndex = 2;
+            chkIA.Text = "/IA:[RASHCNETO] :: Include only files with any of the given Attributes set.";
+            chkIA.UseVisualStyleBackColor = true;
+            // 
+            // chkM
+            // 
+            chkM.AutoSize = true;
+            chkM.Location = new Point(12, 38);
+            chkM.Name = "chkM";
+            chkM.Size = new Size(331, 19);
+            chkM.TabIndex = 1;
+            chkM.Text = "/M :: copy only files with the Archive attribute and reset it.";
+            chkM.UseVisualStyleBackColor = true;
+            // 
+            // chkA
+            // 
+            chkA.AutoSize = true;
+            chkA.Location = new Point(12, 15);
+            chkA.Name = "chkA";
+            chkA.Size = new Size(285, 19);
+            chkA.TabIndex = 0;
+            chkA.Text = "/A :: copy only files with the Archive attribute set.";
+            chkA.UseVisualStyleBackColor = true;
             // 
             // tabRetry
             // 
@@ -963,6 +1507,10 @@ namespace Grobocopy
             tabCopy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numMT).EndInit();
             ((System.ComponentModel.ISupportInitialize)numLev).EndInit();
+            tabThrottling.ResumeLayout(false);
+            tabThrottling.PerformLayout();
+            tabSelection.ResumeLayout(false);
+            tabSelection.PerformLayout();
             tabRemarks.ResumeLayout(false);
             tabRemarks.PerformLayout();
             grpOutput.ResumeLayout(false);
@@ -1027,7 +1575,7 @@ namespace Grobocopy
             // Base arguments
             string arguments = $"\"{source}\" \"{destination}\"";
 
-            // Add other switches based on checkboxes
+            // Copy options
             if (chkS.Checked)
             {
                 arguments += " /S";
@@ -1178,11 +1726,133 @@ namespace Grobocopy
                 arguments += " /NOCLONE";
             }
 
+            // File throttling
+            if (chkIoMaxSize.Checked)
+            {
+                arguments += " /IoMaxSize:" + txtIoMaxSize.Text;
+            }
+            if (chkIoRate.Checked)
+            {
+                arguments += " /IoRate:" + txtIoRate.Text;
+            }
+            if (chkThreshold.Checked)
+            {
+                arguments += " /Threshold:" + txtThreshold.Text;
+            }
+
+            // File selection
+            if (chkA.Checked)
+            {
+                arguments += " /A";
+            }
+            if (chkM.Checked)
+            {
+                arguments += " /M" ;
+            }
+            if (chkIA.Checked)
+            {
+                arguments += " /IA:" + txtIA.Text;
+            }
+            if (chkXA.Checked)
+            {
+                arguments += " /XA:" + txtXA.Text;
+            }
+            if (chkXF.Checked)
+            {
+                arguments += " /XF:" + txtXF.Text;
+            }
+            if (chkXD.Checked)
+            {
+                arguments += " /XD:" + txtXD.Text;
+            }
+            if (chkXC.Checked)
+            {
+                arguments += " /XC";
+            }
+            if (chkXN.Checked)
+            {
+                arguments += " /XN";
+            }
+            if (chkXO.Checked)
+            {
+                arguments += " /XO";
+            }
+            if (chkXX.Checked)
+            {
+                arguments += " /XX";
+            }
+            if (chkXL.Checked)
+            {
+                arguments += " /XL";
+            }
+            if (chkIS.Checked)
+            {
+                arguments += " /IS";
+            }
+            if (chkIT.Checked)
+            {
+                arguments += " /IT";
+            }
+            if (chkMAX.Checked)
+            {
+                arguments += " /MAX:" + txtMAX.Text;
+            }
+            if (chkMIN.Checked)
+            {
+                arguments += " /MIN:" + txtMIN.Text;
+            }
+            if (chkMAXAGE.Checked)
+            {
+                arguments += " /MAXAGE:" + txtMAXAGE.Text;
+            }
+            if (chkMINAGE.Checked)
+            {
+                arguments += " /MINAGE:" + txtMINAGE.Text;
+            }
+            if (chkMAXLAD.Checked)
+            {
+                arguments += " /MAXLAD:" + txtMAXLAD.Text;
+            }
+            if (chkMINLAD.Checked)
+            {
+                arguments += " /MINLAD:" + txtMINLAD.Text;
+            }
+            if (chkFFT.Checked)
+            {
+                arguments += " /FFT";
+            }
+            if (chkDST.Checked)
+            {
+                arguments += " /DST";
+            }
+            if (chkXJ.Checked)
+            {
+                arguments += " /XJ";
+            }
+            if (chkXJD.Checked)
+            {
+                arguments += " /XJD";
+            }
+            if (chkXJF.Checked)
+            {
+                arguments += " /XJF";
+            }
+            if (chkIM.Checked)
+            {
+                arguments += " /IM";
+            }
 
 
 
-            // Add other default switches
-            //arguments += " /R:0 /W:0";
+
+
+
+
+
+
+
+
+
 
             return arguments;
         }
@@ -1263,7 +1933,7 @@ namespace Grobocopy
 
         //get version
        private string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-       //private string version = "0.04";
+
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
