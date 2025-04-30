@@ -77,6 +77,41 @@ namespace Grobocopy
         private Label lblMINLAD;
         private CheckBox chkXJ;
         private CheckBox chkXJD;
+        private CheckBox chkLFSMn;
+        private CheckBox chkLFSM;
+        private CheckBox chkTBD;
+        private CheckBox chkREG;
+        private CheckBox chkW;
+        private CheckBox chkR;
+        private TextBox txtLFSMn;
+        private TextBox txtW;
+        private TextBox txtR;
+        private TextBox textBox1;
+        private Button button1;
+        private CheckBox chkFP;
+        private CheckBox chkTS;
+        private CheckBox chkV;
+        private CheckBox chkX;
+        private CheckBox chkL;
+        private CheckBox chkNFL;
+        private CheckBox chkNC;
+        private CheckBox chkNS;
+        private CheckBox chkBYTES;
+        private TextBox txtUNILOGAPPEND;
+        private TextBox txtUNILOG;
+        private TextBox txtLOGAPPEND;
+        private TextBox txtLOG;
+        private CheckBox chkUNILOGAPPEND;
+        private CheckBox chkUNILOG;
+        private CheckBox chkLOGAPPEND;
+        private CheckBox chkLOG;
+        private CheckBox chkETA;
+        private CheckBox chkNP;
+        private CheckBox chkNDL;
+        private CheckBox chkUNICODE;
+        private CheckBox chkNJS;
+        private CheckBox chkNJH;
+        private CheckBox chkTEE;
         private SplitContainer splitContainer;
         private void InitializeComponent()
         {
@@ -192,15 +227,49 @@ namespace Grobocopy
             chkM = new CheckBox();
             chkA = new CheckBox();
             tabRetry = new TabPage();
+            txtLFSMn = new TextBox();
+            txtW = new TextBox();
+            txtR = new TextBox();
+            chkLFSMn = new CheckBox();
+            chkLFSM = new CheckBox();
+            chkTBD = new CheckBox();
+            chkREG = new CheckBox();
+            chkW = new CheckBox();
+            chkR = new CheckBox();
             tabLogging = new TabPage();
             tabJob = new TabPage();
             tabRemarks = new TabPage();
-            txtRemarks = new Label();
+            textBox1 = new TextBox();
             grpOutput = new GroupBox();
+            button1 = new Button();
             txtCommand = new TextBox();
             btnPreview = new Button();
             btnAbout = new Button();
             splitContainer = new SplitContainer();
+            chkFP = new CheckBox();
+            chkTS = new CheckBox();
+            chkV = new CheckBox();
+            chkX = new CheckBox();
+            chkL = new CheckBox();
+            chkNFL = new CheckBox();
+            chkNC = new CheckBox();
+            chkNS = new CheckBox();
+            chkBYTES = new CheckBox();
+            chkETA = new CheckBox();
+            chkNP = new CheckBox();
+            chkNDL = new CheckBox();
+            chkLOG = new CheckBox();
+            chkLOGAPPEND = new CheckBox();
+            chkUNILOG = new CheckBox();
+            chkUNILOGAPPEND = new CheckBox();
+            txtLOG = new TextBox();
+            txtLOGAPPEND = new TextBox();
+            txtUNILOG = new TextBox();
+            txtUNILOGAPPEND = new TextBox();
+            chkTEE = new CheckBox();
+            chkNJH = new CheckBox();
+            chkNJS = new CheckBox();
+            chkUNICODE = new CheckBox();
             grpOptions.SuspendLayout();
             tabControl1.SuspendLayout();
             tabCopy.SuspendLayout();
@@ -208,6 +277,8 @@ namespace Grobocopy
             ((System.ComponentModel.ISupportInitialize)numLev).BeginInit();
             tabThrottling.SuspendLayout();
             tabSelection.SuspendLayout();
+            tabRetry.SuspendLayout();
+            tabLogging.SuspendLayout();
             tabRemarks.SuspendLayout();
             grpOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
@@ -880,7 +951,6 @@ namespace Grobocopy
             chkS.TabIndex = 9;
             chkS.Text = "/S :: copy Subdirectories, but not empty ones.";
             chkS.UseVisualStyleBackColor = true;
-            chkS.CheckedChanged += chkS_CheckedChanged;
             // 
             // chkLev
             // 
@@ -1380,6 +1450,16 @@ namespace Grobocopy
             // 
             // tabRetry
             // 
+            tabRetry.AutoScroll = true;
+            tabRetry.Controls.Add(txtLFSMn);
+            tabRetry.Controls.Add(txtW);
+            tabRetry.Controls.Add(txtR);
+            tabRetry.Controls.Add(chkLFSMn);
+            tabRetry.Controls.Add(chkLFSM);
+            tabRetry.Controls.Add(chkTBD);
+            tabRetry.Controls.Add(chkREG);
+            tabRetry.Controls.Add(chkW);
+            tabRetry.Controls.Add(chkR);
             tabRetry.Location = new Point(4, 24);
             tabRetry.Name = "tabRetry";
             tabRetry.Size = new Size(705, 175);
@@ -1387,8 +1467,117 @@ namespace Grobocopy
             tabRetry.Text = "Retry";
             tabRetry.UseVisualStyleBackColor = true;
             // 
+            // txtLFSMn
+            // 
+            txtLFSMn.Location = new Point(37, 224);
+            txtLFSMn.Name = "txtLFSMn";
+            txtLFSMn.PlaceholderText = "n[KMG]";
+            txtLFSMn.Size = new Size(100, 23);
+            txtLFSMn.TabIndex = 8;
+            // 
+            // txtW
+            // 
+            txtW.Location = new Point(37, 97);
+            txtW.Name = "txtW";
+            txtW.PlaceholderText = "n";
+            txtW.Size = new Size(100, 23);
+            txtW.TabIndex = 7;
+            // 
+            // txtR
+            // 
+            txtR.Location = new Point(37, 40);
+            txtR.Name = "txtR";
+            txtR.PlaceholderText = "n";
+            txtR.Size = new Size(100, 23);
+            txtR.TabIndex = 6;
+            // 
+            // chkLFSMn
+            // 
+            chkLFSMn.AutoSize = true;
+            chkLFSMn.Location = new Point(13, 199);
+            chkLFSMn.Name = "chkLFSMn";
+            chkLFSMn.Size = new Size(461, 19);
+            chkLFSMn.TabIndex = 5;
+            chkLFSMn.Text = "/LFSM:n[KMG] :: /LFSM, specifying the floor size in n [K:kilo,M:mega,G:giga] bytes.";
+            chkLFSMn.UseVisualStyleBackColor = true;
+            // 
+            // chkLFSM
+            // 
+            chkLFSM.AutoSize = true;
+            chkLFSM.Location = new Point(13, 175);
+            chkLFSM.Name = "chkLFSM";
+            chkLFSM.Size = new Size(501, 19);
+            chkLFSM.TabIndex = 4;
+            chkLFSM.Text = " /LFSM :: Operate in low free space mode, enabling copy pause and resume (see Remarks).";
+            chkLFSM.UseVisualStyleBackColor = true;
+            // 
+            // chkTBD
+            // 
+            chkTBD.AutoSize = true;
+            chkTBD.Location = new Point(13, 154);
+            chkTBD.Name = "chkTBD";
+            chkTBD.Size = new Size(330, 19);
+            chkTBD.TabIndex = 3;
+            chkTBD.Text = "/TBD :: Wait for sharenames To Be Defined (retry error 67).";
+            chkTBD.UseVisualStyleBackColor = true;
+            // 
+            // chkREG
+            // 
+            chkREG.AutoSize = true;
+            chkREG.Location = new Point(13, 132);
+            chkREG.Name = "chkREG";
+            chkREG.Size = new Size(344, 19);
+            chkREG.TabIndex = 2;
+            chkREG.Text = "/REG :: Save /R:n and /W:n in the Registry as default settings.";
+            chkREG.UseVisualStyleBackColor = true;
+            // 
+            // chkW
+            // 
+            chkW.AutoSize = true;
+            chkW.Location = new Point(13, 74);
+            chkW.Name = "chkW";
+            chkW.Size = new Size(316, 19);
+            chkW.TabIndex = 1;
+            chkW.Text = "/W:n :: Wait time between retries: default is 30 seconds.";
+            chkW.UseVisualStyleBackColor = true;
+            // 
+            // chkR
+            // 
+            chkR.AutoSize = true;
+            chkR.Location = new Point(13, 16);
+            chkR.Name = "chkR";
+            chkR.Size = new Size(335, 19);
+            chkR.TabIndex = 0;
+            chkR.Text = "/R:n :: number of Retries on failed copies: default 1 million.";
+            chkR.UseVisualStyleBackColor = true;
+            // 
             // tabLogging
             // 
+            tabLogging.AutoScroll = true;
+            tabLogging.Controls.Add(chkUNICODE);
+            tabLogging.Controls.Add(chkNJS);
+            tabLogging.Controls.Add(chkNJH);
+            tabLogging.Controls.Add(chkTEE);
+            tabLogging.Controls.Add(txtUNILOGAPPEND);
+            tabLogging.Controls.Add(txtUNILOG);
+            tabLogging.Controls.Add(txtLOGAPPEND);
+            tabLogging.Controls.Add(txtLOG);
+            tabLogging.Controls.Add(chkUNILOGAPPEND);
+            tabLogging.Controls.Add(chkUNILOG);
+            tabLogging.Controls.Add(chkLOGAPPEND);
+            tabLogging.Controls.Add(chkLOG);
+            tabLogging.Controls.Add(chkETA);
+            tabLogging.Controls.Add(chkNP);
+            tabLogging.Controls.Add(chkNDL);
+            tabLogging.Controls.Add(chkFP);
+            tabLogging.Controls.Add(chkTS);
+            tabLogging.Controls.Add(chkV);
+            tabLogging.Controls.Add(chkX);
+            tabLogging.Controls.Add(chkL);
+            tabLogging.Controls.Add(chkNFL);
+            tabLogging.Controls.Add(chkNC);
+            tabLogging.Controls.Add(chkNS);
+            tabLogging.Controls.Add(chkBYTES);
             tabLogging.Location = new Point(4, 24);
             tabLogging.Name = "tabLogging";
             tabLogging.Size = new Size(705, 175);
@@ -1408,7 +1597,7 @@ namespace Grobocopy
             // tabRemarks
             // 
             tabRemarks.AutoScroll = true;
-            tabRemarks.Controls.Add(txtRemarks);
+            tabRemarks.Controls.Add(textBox1);
             tabRemarks.Location = new Point(4, 24);
             tabRemarks.Name = "tabRemarks";
             tabRemarks.Size = new Size(705, 175);
@@ -1416,17 +1605,21 @@ namespace Grobocopy
             tabRemarks.Text = "Remarks";
             tabRemarks.UseVisualStyleBackColor = true;
             // 
-            // txtRemarks
+            // textBox1
             // 
-            txtRemarks.AutoSize = true;
-            txtRemarks.Location = new Point(120, 16);
-            txtRemarks.Name = "txtRemarks";
-            txtRemarks.Size = new Size(429, 525);
-            txtRemarks.TabIndex = 0;
-            txtRemarks.Text = resources.GetString("txtRemarks.Text");
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.Location = new Point(3, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Size = new Size(699, 169);
+            textBox1.TabIndex = 1;
+            textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // grpOutput
             // 
+            grpOutput.Controls.Add(button1);
             grpOutput.Controls.Add(txtCommand);
             grpOutput.Controls.Add(btnPreview);
             grpOutput.Controls.Add(btnStartCopy);
@@ -1440,6 +1633,17 @@ namespace Grobocopy
             grpOutput.TabStop = false;
             grpOutput.Text = "Output";
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.Location = new Point(657, 30);
+            button1.Name = "button1";
+            button1.Size = new Size(61, 23);
+            button1.TabIndex = 11;
+            button1.Text = "Copy";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // txtCommand
             // 
             txtCommand.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -1448,7 +1652,7 @@ namespace Grobocopy
             txtCommand.Location = new Point(14, 30);
             txtCommand.Name = "txtCommand";
             txtCommand.ReadOnly = true;
-            txtCommand.Size = new Size(705, 23);
+            txtCommand.Size = new Size(637, 23);
             txtCommand.TabIndex = 3;
             txtCommand.Text = "Command preview";
             // 
@@ -1492,6 +1696,234 @@ namespace Grobocopy
             splitContainer.SplitterDistance = 300;
             splitContainer.TabIndex = 12;
             // 
+            // chkFP
+            // 
+            chkFP.AutoSize = true;
+            chkFP.Location = new Point(13, 88);
+            chkFP.Name = "chkFP";
+            chkFP.Size = new Size(287, 19);
+            chkFP.TabIndex = 20;
+            chkFP.Text = "/FP :: include Full Pathname of files in the output.";
+            chkFP.UseVisualStyleBackColor = true;
+            // 
+            // chkTS
+            // 
+            chkTS.AutoSize = true;
+            chkTS.Location = new Point(13, 69);
+            chkTS.Name = "chkTS";
+            chkTS.Size = new Size(299, 19);
+            chkTS.TabIndex = 19;
+            chkTS.Text = "/TS :: include source file Time Stamps in the output.";
+            chkTS.UseVisualStyleBackColor = true;
+            // 
+            // chkV
+            // 
+            chkV.AutoSize = true;
+            chkV.Location = new Point(13, 50);
+            chkV.Name = "chkV";
+            chkV.Size = new Size(299, 19);
+            chkV.TabIndex = 18;
+            chkV.Text = "/V :: produce Verbose output, showing skipped files.";
+            chkV.UseVisualStyleBackColor = true;
+            // 
+            // chkX
+            // 
+            chkX.AutoSize = true;
+            chkX.Location = new Point(13, 31);
+            chkX.Name = "chkX";
+            chkX.Size = new Size(278, 19);
+            chkX.TabIndex = 17;
+            chkX.Text = "/X :: report all eXtra files, not just those selected.";
+            chkX.UseVisualStyleBackColor = true;
+            // 
+            // chkL
+            // 
+            chkL.AutoSize = true;
+            chkL.Location = new Point(13, 12);
+            chkL.Name = "chkL";
+            chkL.Size = new Size(322, 19);
+            chkL.TabIndex = 16;
+            chkL.Text = "/L :: List only - don't copy, timestamp or delete any files.";
+            chkL.UseVisualStyleBackColor = true;
+            // 
+            // chkNFL
+            // 
+            chkNFL.AutoSize = true;
+            chkNFL.Location = new Point(13, 166);
+            chkNFL.Name = "chkNFL";
+            chkNFL.Size = new Size(241, 19);
+            chkNFL.TabIndex = 15;
+            chkNFL.Text = "/NFL :: No File List - don't log file names.";
+            chkNFL.UseVisualStyleBackColor = true;
+            // 
+            // chkNC
+            // 
+            chkNC.AutoSize = true;
+            chkNC.Location = new Point(13, 145);
+            chkNC.Name = "chkNC";
+            chkNC.Size = new Size(226, 19);
+            chkNC.TabIndex = 14;
+            chkNC.Text = "/NC :: No Class - don't log file classes.";
+            chkNC.UseVisualStyleBackColor = true;
+            // 
+            // chkNS
+            // 
+            chkNS.AutoSize = true;
+            chkNS.Location = new Point(13, 126);
+            chkNS.Name = "chkNS";
+            chkNS.Size = new Size(205, 19);
+            chkNS.TabIndex = 13;
+            chkNS.Text = "/NS :: No Size - don't log file sizes.";
+            chkNS.UseVisualStyleBackColor = true;
+            // 
+            // chkBYTES
+            // 
+            chkBYTES.AutoSize = true;
+            chkBYTES.Location = new Point(13, 107);
+            chkBYTES.Name = "chkBYTES";
+            chkBYTES.Size = new Size(176, 19);
+            chkBYTES.TabIndex = 12;
+            chkBYTES.Text = "/BYTES :: Print sizes as bytes.";
+            chkBYTES.UseVisualStyleBackColor = true;
+            // 
+            // chkETA
+            // 
+            chkETA.AutoSize = true;
+            chkETA.Location = new Point(13, 233);
+            chkETA.Name = "chkETA";
+            chkETA.Size = new Size(307, 19);
+            chkETA.TabIndex = 23;
+            chkETA.Text = "/ETA :: show Estimated Time of Arrival of copied files.";
+            chkETA.UseVisualStyleBackColor = true;
+            // 
+            // chkNP
+            // 
+            chkNP.AutoSize = true;
+            chkNP.Location = new Point(13, 211);
+            chkNP.Name = "chkNP";
+            chkNP.Size = new Size(306, 19);
+            chkNP.TabIndex = 22;
+            chkNP.Text = "/NP :: No Progress - don't display percentage copied.";
+            chkNP.UseVisualStyleBackColor = true;
+            // 
+            // chkNDL
+            // 
+            chkNDL.AutoSize = true;
+            chkNDL.Location = new Point(13, 189);
+            chkNDL.Name = "chkNDL";
+            chkNDL.Size = new Size(304, 19);
+            chkNDL.TabIndex = 21;
+            chkNDL.Text = "/NDL :: No Directory List - don't log directory names.";
+            chkNDL.UseVisualStyleBackColor = true;
+            // 
+            // chkLOG
+            // 
+            chkLOG.AutoSize = true;
+            chkLOG.Location = new Point(13, 258);
+            chkLOG.Name = "chkLOG";
+            chkLOG.Size = new Size(340, 19);
+            chkLOG.TabIndex = 24;
+            chkLOG.Text = "/LOG:file :: output status to LOG file (overwrite existing log).";
+            chkLOG.UseVisualStyleBackColor = true;
+            // 
+            // chkLOGAPPEND
+            // 
+            chkLOGAPPEND.AutoSize = true;
+            chkLOGAPPEND.Location = new Point(13, 310);
+            chkLOGAPPEND.Name = "chkLOGAPPEND";
+            chkLOGAPPEND.Size = new Size(353, 19);
+            chkLOGAPPEND.TabIndex = 25;
+            chkLOGAPPEND.Text = "/LOG+:file :: output status to LOG file (append to existing log).";
+            chkLOGAPPEND.UseVisualStyleBackColor = true;
+            // 
+            // chkUNILOG
+            // 
+            chkUNILOG.AutoSize = true;
+            chkUNILOG.Location = new Point(13, 367);
+            chkUNILOG.Name = "chkUNILOG";
+            chkUNILOG.Size = new Size(428, 19);
+            chkUNILOG.TabIndex = 26;
+            chkUNILOG.Text = "/UNILOG:file :: output status to LOG file as UNICODE (overwrite existing log).";
+            chkUNILOG.UseVisualStyleBackColor = true;
+            // 
+            // chkUNILOGAPPEND
+            // 
+            chkUNILOGAPPEND.AutoSize = true;
+            chkUNILOGAPPEND.Location = new Point(13, 419);
+            chkUNILOGAPPEND.Name = "chkUNILOGAPPEND";
+            chkUNILOGAPPEND.Size = new Size(441, 19);
+            chkUNILOGAPPEND.TabIndex = 27;
+            chkUNILOGAPPEND.Text = "/UNILOG+:file :: output status to LOG file as UNICODE (append to existing log).";
+            chkUNILOGAPPEND.UseVisualStyleBackColor = true;
+            // 
+            // txtLOG
+            // 
+            txtLOG.Location = new Point(35, 281);
+            txtLOG.Name = "txtLOG";
+            txtLOG.Size = new Size(331, 23);
+            txtLOG.TabIndex = 28;
+            // 
+            // txtLOGAPPEND
+            // 
+            txtLOGAPPEND.Location = new Point(35, 333);
+            txtLOGAPPEND.Name = "txtLOGAPPEND";
+            txtLOGAPPEND.Size = new Size(331, 23);
+            txtLOGAPPEND.TabIndex = 29;
+            // 
+            // txtUNILOG
+            // 
+            txtUNILOG.Location = new Point(35, 389);
+            txtUNILOG.Name = "txtUNILOG";
+            txtUNILOG.Size = new Size(331, 23);
+            txtUNILOG.TabIndex = 30;
+            // 
+            // txtUNILOGAPPEND
+            // 
+            txtUNILOGAPPEND.Location = new Point(35, 441);
+            txtUNILOGAPPEND.Name = "txtUNILOGAPPEND";
+            txtUNILOGAPPEND.Size = new Size(331, 23);
+            txtUNILOGAPPEND.TabIndex = 31;
+            // 
+            // chkTEE
+            // 
+            chkTEE.AutoSize = true;
+            chkTEE.Location = new Point(13, 482);
+            chkTEE.Name = "chkTEE";
+            chkTEE.Size = new Size(318, 19);
+            chkTEE.TabIndex = 32;
+            chkTEE.Text = "/TEE :: output to console window, as well as the log file.";
+            chkTEE.UseVisualStyleBackColor = true;
+            // 
+            // chkNJH
+            // 
+            chkNJH.AutoSize = true;
+            chkNJH.Location = new Point(13, 507);
+            chkNJH.Name = "chkNJH";
+            chkNJH.Size = new Size(146, 19);
+            chkNJH.TabIndex = 33;
+            chkNJH.Text = "/NJH :: No Job Header.";
+            chkNJH.UseVisualStyleBackColor = true;
+            // 
+            // chkNJS
+            // 
+            chkNJS.AutoSize = true;
+            chkNJS.Location = new Point(13, 532);
+            chkNJS.Name = "chkNJS";
+            chkNJS.Size = new Size(156, 19);
+            chkNJS.TabIndex = 34;
+            chkNJS.Text = "/NJS :: No Job Summary.";
+            chkNJS.UseVisualStyleBackColor = true;
+            // 
+            // chkUNICODE
+            // 
+            chkUNICODE.AutoSize = true;
+            chkUNICODE.Location = new Point(13, 557);
+            chkUNICODE.Name = "chkUNICODE";
+            chkUNICODE.Size = new Size(235, 19);
+            chkUNICODE.TabIndex = 35;
+            chkUNICODE.Text = "/UNICODE :: output status as UNICODE.";
+            chkUNICODE.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             ClientSize = new Size(732, 689);
@@ -1511,6 +1943,10 @@ namespace Grobocopy
             tabThrottling.PerformLayout();
             tabSelection.ResumeLayout(false);
             tabSelection.PerformLayout();
+            tabRetry.ResumeLayout(false);
+            tabRetry.PerformLayout();
+            tabLogging.ResumeLayout(false);
+            tabLogging.PerformLayout();
             tabRemarks.ResumeLayout(false);
             tabRemarks.PerformLayout();
             grpOutput.ResumeLayout(false);
@@ -1581,14 +2017,14 @@ namespace Grobocopy
                 arguments += " /S";
             }
             if (chkE.Checked)
-            if (chkE.Checked)
-            {
-                arguments += " /E";
-            }            
+                if (chkE.Checked)
+                {
+                    arguments += " /E";
+                }
             if (chkLev.Checked)
             {
                 arguments += " /LEV:" + numLev.Value;
-            }            
+            }
             if (chkZ.Checked)
             {
                 arguments += " /Z";
@@ -1747,7 +2183,7 @@ namespace Grobocopy
             }
             if (chkM.Checked)
             {
-                arguments += " /M" ;
+                arguments += " /M";
             }
             if (chkIA.Checked)
             {
@@ -1842,6 +2278,116 @@ namespace Grobocopy
                 arguments += " /IM";
             }
 
+            // Retry
+            if (chkR.Checked)
+            {
+                arguments += " /R:" + txtR.Text;
+            }
+            if (chkW.Checked)
+            {
+                arguments += " /W:" + txtW.Text;
+            }
+            if (chkREG.Checked)
+            {
+                arguments += " /REG";
+            }
+            if (chkTBD.Checked)
+            {
+                arguments += " /TBD";
+            }
+            if (chkLFSM.Checked)
+            {
+                arguments += " /LFSM";
+            }
+            if (chkLFSMn.Checked)
+            {
+                arguments += " /LFSM:" + txtLFSMn.Text;
+            }
+
+            // Logging
+
+            if (chkL.Checked)
+            {
+                arguments += " /L";
+            }
+            if (chkX.Checked)
+            {
+                arguments += " /X";
+            }
+            if (chkV.Checked)
+            {
+                arguments += " /V";
+            }
+            if (chkTS.Checked)
+            {
+                arguments += " /TS";
+            }
+            if (chkFP.Checked)
+            {
+                arguments += " /FP";
+            }
+            if (chkBYTES.Checked)
+            {
+                arguments += " /BYTES";
+            }
+            if (chkNS.Checked)
+            {
+                arguments += " /NS";
+            }
+            if (chkNC.Checked)
+            {
+                arguments += " /NC";
+            }
+            if (chkNFL.Checked)
+            {
+                arguments += " /NFL";
+            }
+            if (chkNDL.Checked)
+            {
+                arguments += " /NDL";
+            }
+            if (chkNP.Checked)
+            {
+                arguments += " /NP";
+            }
+            if (chkETA.Checked)
+            {
+                arguments += " /ETA";
+            }
+
+            if (chkLOG.Checked)
+            {
+                arguments += " /LOG:" + txtLOG.Text;
+            }
+            if (chkLOGAPPEND.Checked)
+            {
+                arguments += " /LOG+:" + txtLOGAPPEND.Text;
+            }
+            if (chkUNILOG.Checked)
+            {
+                arguments += " /UNILOG:" + txtUNILOG.Text;
+            }
+            if (chkUNILOGAPPEND.Checked)
+            {
+                arguments += " /UNILOG+:" + txtUNILOGAPPEND.Text;
+            }
+            if (chkTEE.Checked)
+            {
+                arguments += " /TEE";
+            }
+            if (chkNJH.Checked)
+            {
+                arguments += " /NJH";
+            }
+            if (chkNJS.Checked)
+            {
+                arguments += " /NJS";
+            }
+            if (chkUNICODE.Checked)
+            {
+                arguments += " /UNICODE";
+            }
+
 
 
 
@@ -1926,13 +2472,12 @@ namespace Grobocopy
         private CheckBox chkMOVE;
         private TabPage tabSelection;
         private TabPage tabRetry;
-        private Label txtRemarks;
         private TabPage tabLogging;
         private TabPage tabJob;
         private TabPage tabRemarks;
 
         //get version
-       private string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        private string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
 
         private void btnPreview_Click(object sender, EventArgs e)
@@ -1956,14 +2501,16 @@ namespace Grobocopy
             MessageBox.Show("Grobocopy v" + version + "\n\nA simple GUI for Robocopy.\n\nCreated by Dan MacCormac\n\nGitHub: https://www.github.com/dmaccormac", "About Grobocopy", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void chkS_CheckedChanged(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            // Copy to clipboard
+            Clipboard.SetText(txtCommand.Text);
+            
         }
     }
 }
