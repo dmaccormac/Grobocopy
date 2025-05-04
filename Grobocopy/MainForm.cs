@@ -57,7 +57,7 @@ namespace Grobocopy
         private CheckBox chkM;
         private CheckBox chkA;
         private Label lblIA;
-        private Label label1;
+        private Label lblXA;
         private TextBox txtXD;
         private TextBox txtXF;
         private CheckBox chkIT;
@@ -87,7 +87,7 @@ namespace Grobocopy
         private TextBox txtW;
         private TextBox txtR;
         private TextBox textBox1;
-        private Button button1;
+        private Button btnCopy;
         private CheckBox chkFP;
         private CheckBox chkTS;
         private CheckBox chkV;
@@ -112,6 +112,15 @@ namespace Grobocopy
         private CheckBox chkNJS;
         private CheckBox chkNJH;
         private CheckBox chkTEE;
+        private TextBox txtSAVE;
+        private TextBox txtJOB;
+        private CheckBox chkIF;
+        private CheckBox chkNODD;
+        private CheckBox chkNOSD;
+        private CheckBox chkQUIT;
+        private CheckBox chkSAVE;
+        private CheckBox chkJOB;
+        private TextBox txtIF;
         private SplitContainer splitContainer;
         private void InitializeComponent()
         {
@@ -121,7 +130,7 @@ namespace Grobocopy
             txtOutput = new TextBox();
             btnBrowseSource = new Button();
             btnBrowseDesntination = new Button();
-            btnStartCopy = new Button();
+            btnStart = new Button();
             lblSource = new Label();
             lblDestination = new Label();
             grpOptions = new GroupBox();
@@ -131,7 +140,7 @@ namespace Grobocopy
             lblAPOS = new Label();
             lblANEG = new Label();
             chkMOVE = new CheckBox();
-            label3 = new Label();
+            lblMT = new Label();
             txtIPG = new TextBox();
             txtSPARSE = new TextBox();
             txtDCOPY = new TextBox();
@@ -207,7 +216,7 @@ namespace Grobocopy
             chkIT = new CheckBox();
             txtXD = new TextBox();
             txtXF = new TextBox();
-            label1 = new Label();
+            lblXA = new Label();
             lblIA = new Label();
             txtXA = new TextBox();
             txtIA = new TextBox();
@@ -237,15 +246,21 @@ namespace Grobocopy
             chkW = new CheckBox();
             chkR = new CheckBox();
             tabLogging = new TabPage();
-            tabJob = new TabPage();
-            tabRemarks = new TabPage();
-            textBox1 = new TextBox();
-            grpOutput = new GroupBox();
-            button1 = new Button();
-            txtCommand = new TextBox();
-            btnPreview = new Button();
-            btnAbout = new Button();
-            splitContainer = new SplitContainer();
+            chkUNICODE = new CheckBox();
+            chkNJS = new CheckBox();
+            chkNJH = new CheckBox();
+            chkTEE = new CheckBox();
+            txtUNILOGAPPEND = new TextBox();
+            txtUNILOG = new TextBox();
+            txtLOGAPPEND = new TextBox();
+            txtLOG = new TextBox();
+            chkUNILOGAPPEND = new CheckBox();
+            chkUNILOG = new CheckBox();
+            chkLOGAPPEND = new CheckBox();
+            chkLOG = new CheckBox();
+            chkETA = new CheckBox();
+            chkNP = new CheckBox();
+            chkNDL = new CheckBox();
             chkFP = new CheckBox();
             chkTS = new CheckBox();
             chkV = new CheckBox();
@@ -255,21 +270,24 @@ namespace Grobocopy
             chkNC = new CheckBox();
             chkNS = new CheckBox();
             chkBYTES = new CheckBox();
-            chkETA = new CheckBox();
-            chkNP = new CheckBox();
-            chkNDL = new CheckBox();
-            chkLOG = new CheckBox();
-            chkLOGAPPEND = new CheckBox();
-            chkUNILOG = new CheckBox();
-            chkUNILOGAPPEND = new CheckBox();
-            txtLOG = new TextBox();
-            txtLOGAPPEND = new TextBox();
-            txtUNILOG = new TextBox();
-            txtUNILOGAPPEND = new TextBox();
-            chkTEE = new CheckBox();
-            chkNJH = new CheckBox();
-            chkNJS = new CheckBox();
-            chkUNICODE = new CheckBox();
+            tabJob = new TabPage();
+            txtIF = new TextBox();
+            txtSAVE = new TextBox();
+            txtJOB = new TextBox();
+            chkIF = new CheckBox();
+            chkNODD = new CheckBox();
+            chkNOSD = new CheckBox();
+            chkQUIT = new CheckBox();
+            chkSAVE = new CheckBox();
+            chkJOB = new CheckBox();
+            tabRemarks = new TabPage();
+            textBox1 = new TextBox();
+            grpOutput = new GroupBox();
+            btnAbout = new Button();
+            btnCopy = new Button();
+            txtCommand = new TextBox();
+            btnPreview = new Button();
+            splitContainer = new SplitContainer();
             grpOptions.SuspendLayout();
             tabControl1.SuspendLayout();
             tabCopy.SuspendLayout();
@@ -279,6 +297,7 @@ namespace Grobocopy
             tabSelection.SuspendLayout();
             tabRetry.SuspendLayout();
             tabLogging.SuspendLayout();
+            tabJob.SuspendLayout();
             tabRemarks.SuspendLayout();
             grpOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
@@ -341,16 +360,16 @@ namespace Grobocopy
             btnBrowseDesntination.UseVisualStyleBackColor = true;
             btnBrowseDesntination.Click += btnBrowseDestination_Click;
             // 
-            // btnStartCopy
+            // btnStart
             // 
-            btnStartCopy.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnStartCopy.Location = new Point(618, 349);
-            btnStartCopy.Name = "btnStartCopy";
-            btnStartCopy.Size = new Size(75, 23);
-            btnStartCopy.TabIndex = 5;
-            btnStartCopy.Text = "Start";
-            btnStartCopy.UseVisualStyleBackColor = true;
-            btnStartCopy.Click += btnStartCopy_Click;
+            btnStart.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnStart.Location = new Point(643, 349);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(75, 23);
+            btnStart.TabIndex = 5;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
             // 
             // lblSource
             // 
@@ -412,7 +431,7 @@ namespace Grobocopy
             tabCopy.Controls.Add(lblAPOS);
             tabCopy.Controls.Add(lblANEG);
             tabCopy.Controls.Add(chkMOVE);
-            tabCopy.Controls.Add(label3);
+            tabCopy.Controls.Add(lblMT);
             tabCopy.Controls.Add(txtIPG);
             tabCopy.Controls.Add(txtSPARSE);
             tabCopy.Controls.Add(txtDCOPY);
@@ -471,7 +490,7 @@ namespace Grobocopy
             // 
             // numMT
             // 
-            numMT.Location = new Point(38, 1128);
+            numMT.Location = new Point(33, 1128);
             numMT.Maximum = new decimal(new int[] { 128, 0, 0, 0 });
             numMT.Name = "numMT";
             numMT.Size = new Size(43, 23);
@@ -481,7 +500,7 @@ namespace Grobocopy
             // lblAPOS
             // 
             lblAPOS.AutoSize = true;
-            lblAPOS.Location = new Point(30, 614);
+            lblAPOS.Location = new Point(24, 614);
             lblAPOS.Name = "lblAPOS";
             lblAPOS.Size = new Size(505, 15);
             lblAPOS.TabIndex = 62;
@@ -506,21 +525,21 @@ namespace Grobocopy
             chkMOVE.Text = "/MOVE :: MOVE files AND dirs (delete from source after copying)";
             chkMOVE.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // lblMT
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(38, 1164);
-            label3.Name = "label3";
-            label3.Size = new Size(343, 45);
-            label3.TabIndex = 50;
-            label3.Text = "n must be at least 1 and not greater than 128.\r\nThis option is incompatible with the /IPG and /EFSRAW options.\r\nRedirect output using /LOG option for better performance.";
+            lblMT.AutoSize = true;
+            lblMT.Location = new Point(33, 1154);
+            lblMT.Name = "lblMT";
+            lblMT.Size = new Size(343, 45);
+            lblMT.TabIndex = 50;
+            lblMT.Text = "n must be at least 1 and not greater than 128.\r\nThis option is incompatible with the /IPG and /EFSRAW options.\r\nRedirect output using /LOG option for better performance.";
             // 
             // txtIPG
             // 
-            txtIPG.Location = new Point(36, 1012);
+            txtIPG.Location = new Point(29, 1012);
             txtIPG.Name = "txtIPG";
             txtIPG.PlaceholderText = "n";
-            txtIPG.Size = new Size(103, 23);
+            txtIPG.Size = new Size(40, 23);
             txtIPG.TabIndex = 59;
             // 
             // txtSPARSE
@@ -533,23 +552,23 @@ namespace Grobocopy
             // 
             // txtDCOPY
             // 
-            txtDCOPY.Location = new Point(45, 1237);
+            txtDCOPY.Location = new Point(33, 1237);
             txtDCOPY.Name = "txtDCOPY";
             txtDCOPY.PlaceholderText = "copyflag[s]";
-            txtDCOPY.Size = new Size(89, 23);
+            txtDCOPY.Size = new Size(110, 23);
             txtDCOPY.TabIndex = 57;
             // 
             // txtMON
             // 
-            txtMON.Location = new Point(39, 820);
+            txtMON.Location = new Point(29, 820);
             txtMON.Name = "txtMON";
             txtMON.PlaceholderText = "n";
-            txtMON.Size = new Size(94, 23);
+            txtMON.Size = new Size(52, 23);
             txtMON.TabIndex = 56;
             // 
             // txtRH
             // 
-            txtRH.Location = new Point(39, 922);
+            txtRH.Location = new Point(29, 922);
             txtRH.Name = "txtRH";
             txtRH.PlaceholderText = "hhmm-hhmm";
             txtRH.Size = new Size(100, 23);
@@ -557,10 +576,10 @@ namespace Grobocopy
             // 
             // txtMOT
             // 
-            txtMOT.Location = new Point(39, 872);
+            txtMOT.Location = new Point(29, 872);
             txtMOT.Name = "txtMOT";
             txtMOT.PlaceholderText = "m";
-            txtMOT.Size = new Size(94, 23);
+            txtMOT.Size = new Size(52, 23);
             txtMOT.TabIndex = 54;
             // 
             // txtANEG
@@ -573,20 +592,20 @@ namespace Grobocopy
             // 
             // txtAPOS
             // 
-            txtAPOS.Location = new Point(34, 588);
+            txtAPOS.Location = new Point(24, 588);
             txtAPOS.Name = "txtAPOS";
             txtAPOS.PlaceholderText = "RASHCNET";
-            txtAPOS.Size = new Size(100, 23);
+            txtAPOS.Size = new Size(110, 23);
             txtAPOS.TabIndex = 52;
             // 
             // lblDCOPY
             // 
             lblDCOPY.AutoSize = true;
-            lblDCOPY.Location = new Point(45, 1263);
+            lblDCOPY.Location = new Point(33, 1263);
             lblDCOPY.Name = "lblDCOPY";
-            lblDCOPY.Size = new Size(381, 15);
+            lblDCOPY.Size = new Size(378, 15);
             lblDCOPY.TabIndex = 51;
-            lblDCOPY.Text = " D=Data, A=Attributes, T=Timestamps, E=EAs, X=Skip alt data streams.";
+            lblDCOPY.Text = "D=Data, A=Attributes, T=Timestamps, E=EAs, X=Skip alt data streams.";
             // 
             // chkNOOFFLOAD
             // 
@@ -611,7 +630,7 @@ namespace Grobocopy
             // chkNOCLONE
             // 
             chkNOCLONE.AutoSize = true;
-            chkNOCLONE.Location = new Point(8, 1422);
+            chkNOCLONE.Location = new Point(8, 1424);
             chkNOCLONE.Name = "chkNOCLONE";
             chkNOCLONE.Size = new Size(358, 19);
             chkNOCLONE.TabIndex = 47;
@@ -860,16 +879,16 @@ namespace Grobocopy
             // 
             // txtCOPY
             // 
-            txtCOPY.Location = new Point(34, 275);
+            txtCOPY.Location = new Point(24, 275);
             txtCOPY.Name = "txtCOPY";
             txtCOPY.PlaceholderText = "copyflag[s]";
-            txtCOPY.Size = new Size(94, 23);
+            txtCOPY.Size = new Size(104, 23);
             txtCOPY.TabIndex = 21;
             // 
             // lblCOPY
             // 
             lblCOPY.AutoSize = true;
-            lblCOPY.Location = new Point(34, 301);
+            lblCOPY.Location = new Point(24, 301);
             lblCOPY.Name = "lblCOPY";
             lblCOPY.Size = new Size(458, 30);
             lblCOPY.TabIndex = 19;
@@ -938,6 +957,7 @@ namespace Grobocopy
             // numLev
             // 
             numLev.Location = new Point(33, 88);
+            numLev.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
             numLev.Name = "numLev";
             numLev.Size = new Size(47, 23);
             numLev.TabIndex = 12;
@@ -991,32 +1011,32 @@ namespace Grobocopy
             // 
             // txtThreshold
             // 
-            txtThreshold.Location = new Point(35, 172);
+            txtThreshold.Location = new Point(35, 139);
             txtThreshold.Name = "txtThreshold";
+            txtThreshold.PlaceholderText = "n[KMG]";
             txtThreshold.Size = new Size(100, 23);
             txtThreshold.TabIndex = 12;
-            txtThreshold.Text = "n[KMG]";
             // 
             // txtIoRate
             // 
-            txtIoRate.Location = new Point(35, 113);
+            txtIoRate.Location = new Point(35, 85);
             txtIoRate.Name = "txtIoRate";
+            txtIoRate.PlaceholderText = "n[KMG]";
             txtIoRate.Size = new Size(100, 23);
             txtIoRate.TabIndex = 11;
-            txtIoRate.Text = "n[KMG]";
             // 
             // txtIoMaxSize
             // 
-            txtIoMaxSize.Location = new Point(35, 44);
+            txtIoMaxSize.Location = new Point(35, 31);
             txtIoMaxSize.Name = "txtIoMaxSize";
+            txtIoMaxSize.PlaceholderText = "n[KMG]";
             txtIoMaxSize.Size = new Size(100, 23);
             txtIoMaxSize.TabIndex = 3;
-            txtIoMaxSize.Text = "n[KMG]";
             // 
             // chkThreshold
             // 
             chkThreshold.AutoSize = true;
-            chkThreshold.Location = new Point(13, 147);
+            chkThreshold.Location = new Point(13, 114);
             chkThreshold.Name = "chkThreshold";
             chkThreshold.Size = new Size(480, 19);
             chkThreshold.TabIndex = 2;
@@ -1026,7 +1046,7 @@ namespace Grobocopy
             // chkIoRate
             // 
             chkIoRate.AutoSize = true;
-            chkIoRate.Location = new Point(13, 88);
+            chkIoRate.Location = new Point(13, 60);
             chkIoRate.Name = "chkIoRate";
             chkIoRate.Size = new Size(374, 19);
             chkIoRate.TabIndex = 1;
@@ -1036,7 +1056,7 @@ namespace Grobocopy
             // chkIoMaxSize
             // 
             chkIoMaxSize.AutoSize = true;
-            chkIoMaxSize.Location = new Point(13, 19);
+            chkIoMaxSize.Location = new Point(13, 6);
             chkIoMaxSize.Name = "chkIoMaxSize";
             chkIoMaxSize.Size = new Size(469, 19);
             chkIoMaxSize.TabIndex = 0;
@@ -1065,7 +1085,7 @@ namespace Grobocopy
             tabSelection.Controls.Add(chkIT);
             tabSelection.Controls.Add(txtXD);
             tabSelection.Controls.Add(txtXF);
-            tabSelection.Controls.Add(label1);
+            tabSelection.Controls.Add(lblXA);
             tabSelection.Controls.Add(lblIA);
             tabSelection.Controls.Add(txtXA);
             tabSelection.Controls.Add(txtIA);
@@ -1124,49 +1144,49 @@ namespace Grobocopy
             // 
             txtMINLAD.Location = new Point(28, 872);
             txtMINLAD.Name = "txtMINLAD";
-            txtMINLAD.Size = new Size(100, 23);
+            txtMINLAD.PlaceholderText = "n";
+            txtMINLAD.Size = new Size(48, 23);
             txtMINLAD.TabIndex = 81;
-            txtMINLAD.Text = "n";
             // 
             // txtMAX
             // 
-            txtMAX.Location = new Point(28, 566);
+            txtMAX.Location = new Point(28, 568);
             txtMAX.Name = "txtMAX";
-            txtMAX.Size = new Size(100, 23);
+            txtMAX.PlaceholderText = "n";
+            txtMAX.Size = new Size(48, 23);
             txtMAX.TabIndex = 80;
-            txtMAX.Text = "n";
             // 
             // txtMIN
             // 
             txtMIN.Location = new Point(28, 631);
             txtMIN.Name = "txtMIN";
-            txtMIN.Size = new Size(100, 23);
+            txtMIN.PlaceholderText = "n";
+            txtMIN.Size = new Size(48, 23);
             txtMIN.TabIndex = 79;
-            txtMIN.Text = "n";
             // 
             // txtMAXAGE
             // 
             txtMAXAGE.Location = new Point(28, 694);
             txtMAXAGE.Name = "txtMAXAGE";
-            txtMAXAGE.Size = new Size(100, 23);
+            txtMAXAGE.PlaceholderText = "n";
+            txtMAXAGE.Size = new Size(48, 23);
             txtMAXAGE.TabIndex = 78;
-            txtMAXAGE.Text = "n";
             // 
             // txtMAXLAD
             // 
             txtMAXLAD.Location = new Point(28, 817);
             txtMAXLAD.Name = "txtMAXLAD";
-            txtMAXLAD.Size = new Size(100, 23);
+            txtMAXLAD.PlaceholderText = "n";
+            txtMAXLAD.Size = new Size(48, 23);
             txtMAXLAD.TabIndex = 77;
-            txtMAXLAD.Text = "n";
             // 
             // txtMINAGE
             // 
             txtMINAGE.Location = new Point(28, 752);
             txtMINAGE.Name = "txtMINAGE";
-            txtMINAGE.Size = new Size(100, 23);
+            txtMINAGE.PlaceholderText = "n";
+            txtMINAGE.Size = new Size(48, 23);
             txtMINAGE.TabIndex = 76;
-            txtMINAGE.Text = "n";
             // 
             // chkMINLAD
             // 
@@ -1231,11 +1251,11 @@ namespace Grobocopy
             // chkIM
             // 
             chkIM.AutoSize = true;
-            chkIM.Location = new Point(12, 1052);
+            chkIM.Location = new Point(12, 1049);
             chkIM.Name = "chkIM";
-            chkIM.Size = new Size(307, 19);
+            chkIM.Size = new Size(304, 19);
             chkIM.TabIndex = 68;
-            chkIM.Text = " /IM :: Include Modified files (differing change times).";
+            chkIM.Text = "/IM :: Include Modified files (differing change times).";
             chkIM.UseVisualStyleBackColor = true;
             // 
             // chkIT
@@ -1252,31 +1272,31 @@ namespace Grobocopy
             // 
             txtXD.Location = new Point(36, 323);
             txtXD.Name = "txtXD";
-            txtXD.Size = new Size(100, 23);
+            txtXD.PlaceholderText = "dir[s]";
+            txtXD.Size = new Size(360, 23);
             txtXD.TabIndex = 66;
-            txtXD.Text = "[dirs]...";
             // 
             // txtXF
             // 
-            txtXF.Location = new Point(36, 258);
+            txtXF.Location = new Point(28, 258);
             txtXF.Name = "txtXF";
-            txtXF.Size = new Size(100, 23);
+            txtXF.PlaceholderText = "file[s]";
+            txtXF.Size = new Size(360, 23);
             txtXF.TabIndex = 65;
-            txtXF.Text = "[file]...";
             // 
-            // label1
+            // lblXA
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(36, 208);
-            label1.Name = "label1";
-            label1.Size = new Size(547, 15);
-            label1.TabIndex = 64;
-            label1.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary, Offline.";
+            lblXA.AutoSize = true;
+            lblXA.Location = new Point(36, 208);
+            lblXA.Name = "lblXA";
+            lblXA.Size = new Size(547, 15);
+            lblXA.TabIndex = 64;
+            lblXA.Text = "Read only, Archive, System, Hidden, Compressed, Not content indexed, Encrypted, Temporary, Offline.";
             // 
             // lblIA
             // 
             lblIA.AutoSize = true;
-            lblIA.Location = new Point(49, 118);
+            lblIA.Location = new Point(28, 114);
             lblIA.Name = "lblIA";
             lblIA.Size = new Size(505, 15);
             lblIA.TabIndex = 63;
@@ -1284,28 +1304,28 @@ namespace Grobocopy
             // 
             // txtXA
             // 
-            txtXA.Location = new Point(46, 176);
+            txtXA.Location = new Point(28, 176);
             txtXA.Name = "txtXA";
+            txtXA.PlaceholderText = "[RASHCNETO]";
             txtXA.Size = new Size(100, 23);
             txtXA.TabIndex = 16;
-            txtXA.Text = "[RASHCNETO]";
             // 
             // txtIA
             // 
-            txtIA.Location = new Point(46, 88);
+            txtIA.Location = new Point(28, 88);
             txtIA.Name = "txtIA";
+            txtIA.PlaceholderText = "[RASHCNETO]";
             txtIA.Size = new Size(100, 23);
             txtIA.TabIndex = 15;
-            txtIA.Text = "[RASHCNETO]";
             // 
             // chkDST
             // 
             chkDST.AutoSize = true;
             chkDST.Location = new Point(12, 952);
             chkDST.Name = "chkDST";
-            chkDST.Size = new Size(318, 19);
+            chkDST.Size = new Size(315, 19);
             chkDST.TabIndex = 14;
-            chkDST.Text = " /DST :: compensate for one-hour DST time differences.";
+            chkDST.Text = "/DST :: compensate for one-hour DST time differences.";
             chkDST.UseVisualStyleBackColor = true;
             // 
             // chkFFT
@@ -1441,7 +1461,7 @@ namespace Grobocopy
             // chkA
             // 
             chkA.AutoSize = true;
-            chkA.Location = new Point(12, 15);
+            chkA.Location = new Point(12, 13);
             chkA.Name = "chkA";
             chkA.Size = new Size(285, 19);
             chkA.TabIndex = 0;
@@ -1472,15 +1492,15 @@ namespace Grobocopy
             txtLFSMn.Location = new Point(37, 224);
             txtLFSMn.Name = "txtLFSMn";
             txtLFSMn.PlaceholderText = "n[KMG]";
-            txtLFSMn.Size = new Size(100, 23);
+            txtLFSMn.Size = new Size(93, 23);
             txtLFSMn.TabIndex = 8;
             // 
             // txtW
             // 
-            txtW.Location = new Point(37, 97);
+            txtW.Location = new Point(37, 99);
             txtW.Name = "txtW";
             txtW.PlaceholderText = "n";
-            txtW.Size = new Size(100, 23);
+            txtW.Size = new Size(39, 23);
             txtW.TabIndex = 7;
             // 
             // txtR
@@ -1488,7 +1508,7 @@ namespace Grobocopy
             txtR.Location = new Point(37, 40);
             txtR.Name = "txtR";
             txtR.PlaceholderText = "n";
-            txtR.Size = new Size(100, 23);
+            txtR.Size = new Size(39, 23);
             txtR.TabIndex = 6;
             // 
             // chkLFSMn
@@ -1585,14 +1605,340 @@ namespace Grobocopy
             tabLogging.Text = "Logging";
             tabLogging.UseVisualStyleBackColor = true;
             // 
+            // chkUNICODE
+            // 
+            chkUNICODE.AutoSize = true;
+            chkUNICODE.Location = new Point(13, 605);
+            chkUNICODE.Name = "chkUNICODE";
+            chkUNICODE.Size = new Size(235, 19);
+            chkUNICODE.TabIndex = 35;
+            chkUNICODE.Text = "/UNICODE :: output status as UNICODE.";
+            chkUNICODE.UseVisualStyleBackColor = true;
+            // 
+            // chkNJS
+            // 
+            chkNJS.AutoSize = true;
+            chkNJS.Location = new Point(13, 580);
+            chkNJS.Name = "chkNJS";
+            chkNJS.Size = new Size(156, 19);
+            chkNJS.TabIndex = 34;
+            chkNJS.Text = "/NJS :: No Job Summary.";
+            chkNJS.UseVisualStyleBackColor = true;
+            // 
+            // chkNJH
+            // 
+            chkNJH.AutoSize = true;
+            chkNJH.Location = new Point(13, 555);
+            chkNJH.Name = "chkNJH";
+            chkNJH.Size = new Size(146, 19);
+            chkNJH.TabIndex = 33;
+            chkNJH.Text = "/NJH :: No Job Header.";
+            chkNJH.UseVisualStyleBackColor = true;
+            // 
+            // chkTEE
+            // 
+            chkTEE.AutoSize = true;
+            chkTEE.Location = new Point(13, 530);
+            chkTEE.Name = "chkTEE";
+            chkTEE.Size = new Size(318, 19);
+            chkTEE.TabIndex = 32;
+            chkTEE.Text = "/TEE :: output to console window, as well as the log file.";
+            chkTEE.UseVisualStyleBackColor = true;
+            // 
+            // txtUNILOGAPPEND
+            // 
+            txtUNILOGAPPEND.Location = new Point(35, 495);
+            txtUNILOGAPPEND.Name = "txtUNILOGAPPEND";
+            txtUNILOGAPPEND.PlaceholderText = "file";
+            txtUNILOGAPPEND.Size = new Size(331, 23);
+            txtUNILOGAPPEND.TabIndex = 31;
+            // 
+            // txtUNILOG
+            // 
+            txtUNILOG.Location = new Point(35, 443);
+            txtUNILOG.Name = "txtUNILOG";
+            txtUNILOG.PlaceholderText = "file";
+            txtUNILOG.Size = new Size(331, 23);
+            txtUNILOG.TabIndex = 30;
+            // 
+            // txtLOGAPPEND
+            // 
+            txtLOGAPPEND.Location = new Point(35, 387);
+            txtLOGAPPEND.Name = "txtLOGAPPEND";
+            txtLOGAPPEND.PlaceholderText = "file";
+            txtLOGAPPEND.Size = new Size(331, 23);
+            txtLOGAPPEND.TabIndex = 29;
+            // 
+            // txtLOG
+            // 
+            txtLOG.Location = new Point(35, 335);
+            txtLOG.Name = "txtLOG";
+            txtLOG.PlaceholderText = "file";
+            txtLOG.Size = new Size(331, 23);
+            txtLOG.TabIndex = 28;
+            // 
+            // chkUNILOGAPPEND
+            // 
+            chkUNILOGAPPEND.AutoSize = true;
+            chkUNILOGAPPEND.Location = new Point(13, 473);
+            chkUNILOGAPPEND.Name = "chkUNILOGAPPEND";
+            chkUNILOGAPPEND.Size = new Size(441, 19);
+            chkUNILOGAPPEND.TabIndex = 27;
+            chkUNILOGAPPEND.Text = "/UNILOG+:file :: output status to LOG file as UNICODE (append to existing log).";
+            chkUNILOGAPPEND.UseVisualStyleBackColor = true;
+            // 
+            // chkUNILOG
+            // 
+            chkUNILOG.AutoSize = true;
+            chkUNILOG.Location = new Point(13, 421);
+            chkUNILOG.Name = "chkUNILOG";
+            chkUNILOG.Size = new Size(428, 19);
+            chkUNILOG.TabIndex = 26;
+            chkUNILOG.Text = "/UNILOG:file :: output status to LOG file as UNICODE (overwrite existing log).";
+            chkUNILOG.UseVisualStyleBackColor = true;
+            // 
+            // chkLOGAPPEND
+            // 
+            chkLOGAPPEND.AutoSize = true;
+            chkLOGAPPEND.Location = new Point(13, 364);
+            chkLOGAPPEND.Name = "chkLOGAPPEND";
+            chkLOGAPPEND.Size = new Size(353, 19);
+            chkLOGAPPEND.TabIndex = 25;
+            chkLOGAPPEND.Text = "/LOG+:file :: output status to LOG file (append to existing log).";
+            chkLOGAPPEND.UseVisualStyleBackColor = true;
+            // 
+            // chkLOG
+            // 
+            chkLOG.AutoSize = true;
+            chkLOG.Location = new Point(13, 312);
+            chkLOG.Name = "chkLOG";
+            chkLOG.Size = new Size(340, 19);
+            chkLOG.TabIndex = 24;
+            chkLOG.Text = "/LOG:file :: output status to LOG file (overwrite existing log).";
+            chkLOG.UseVisualStyleBackColor = true;
+            // 
+            // chkETA
+            // 
+            chkETA.AutoSize = true;
+            chkETA.Location = new Point(13, 287);
+            chkETA.Name = "chkETA";
+            chkETA.Size = new Size(307, 19);
+            chkETA.TabIndex = 23;
+            chkETA.Text = "/ETA :: show Estimated Time of Arrival of copied files.";
+            chkETA.UseVisualStyleBackColor = true;
+            // 
+            // chkNP
+            // 
+            chkNP.AutoSize = true;
+            chkNP.Location = new Point(13, 262);
+            chkNP.Name = "chkNP";
+            chkNP.Size = new Size(306, 19);
+            chkNP.TabIndex = 22;
+            chkNP.Text = "/NP :: No Progress - don't display percentage copied.";
+            chkNP.UseVisualStyleBackColor = true;
+            // 
+            // chkNDL
+            // 
+            chkNDL.AutoSize = true;
+            chkNDL.Location = new Point(13, 237);
+            chkNDL.Name = "chkNDL";
+            chkNDL.Size = new Size(304, 19);
+            chkNDL.TabIndex = 21;
+            chkNDL.Text = "/NDL :: No Directory List - don't log directory names.";
+            chkNDL.UseVisualStyleBackColor = true;
+            // 
+            // chkFP
+            // 
+            chkFP.AutoSize = true;
+            chkFP.Location = new Point(13, 112);
+            chkFP.Name = "chkFP";
+            chkFP.Size = new Size(287, 19);
+            chkFP.TabIndex = 20;
+            chkFP.Text = "/FP :: include Full Pathname of files in the output.";
+            chkFP.UseVisualStyleBackColor = true;
+            // 
+            // chkTS
+            // 
+            chkTS.AutoSize = true;
+            chkTS.Location = new Point(13, 87);
+            chkTS.Name = "chkTS";
+            chkTS.Size = new Size(299, 19);
+            chkTS.TabIndex = 19;
+            chkTS.Text = "/TS :: include source file Time Stamps in the output.";
+            chkTS.UseVisualStyleBackColor = true;
+            // 
+            // chkV
+            // 
+            chkV.AutoSize = true;
+            chkV.Location = new Point(13, 62);
+            chkV.Name = "chkV";
+            chkV.Size = new Size(299, 19);
+            chkV.TabIndex = 18;
+            chkV.Text = "/V :: produce Verbose output, showing skipped files.";
+            chkV.UseVisualStyleBackColor = true;
+            // 
+            // chkX
+            // 
+            chkX.AutoSize = true;
+            chkX.Location = new Point(13, 37);
+            chkX.Name = "chkX";
+            chkX.Size = new Size(278, 19);
+            chkX.TabIndex = 17;
+            chkX.Text = "/X :: report all eXtra files, not just those selected.";
+            chkX.UseVisualStyleBackColor = true;
+            // 
+            // chkL
+            // 
+            chkL.AutoSize = true;
+            chkL.Location = new Point(13, 12);
+            chkL.Name = "chkL";
+            chkL.Size = new Size(322, 19);
+            chkL.TabIndex = 16;
+            chkL.Text = "/L :: List only - don't copy, timestamp or delete any files.";
+            chkL.UseVisualStyleBackColor = true;
+            // 
+            // chkNFL
+            // 
+            chkNFL.AutoSize = true;
+            chkNFL.Location = new Point(13, 212);
+            chkNFL.Name = "chkNFL";
+            chkNFL.Size = new Size(241, 19);
+            chkNFL.TabIndex = 15;
+            chkNFL.Text = "/NFL :: No File List - don't log file names.";
+            chkNFL.UseVisualStyleBackColor = true;
+            // 
+            // chkNC
+            // 
+            chkNC.AutoSize = true;
+            chkNC.Location = new Point(13, 187);
+            chkNC.Name = "chkNC";
+            chkNC.Size = new Size(226, 19);
+            chkNC.TabIndex = 14;
+            chkNC.Text = "/NC :: No Class - don't log file classes.";
+            chkNC.UseVisualStyleBackColor = true;
+            // 
+            // chkNS
+            // 
+            chkNS.AutoSize = true;
+            chkNS.Location = new Point(13, 162);
+            chkNS.Name = "chkNS";
+            chkNS.Size = new Size(205, 19);
+            chkNS.TabIndex = 13;
+            chkNS.Text = "/NS :: No Size - don't log file sizes.";
+            chkNS.UseVisualStyleBackColor = true;
+            // 
+            // chkBYTES
+            // 
+            chkBYTES.AutoSize = true;
+            chkBYTES.Location = new Point(13, 137);
+            chkBYTES.Name = "chkBYTES";
+            chkBYTES.Size = new Size(176, 19);
+            chkBYTES.TabIndex = 12;
+            chkBYTES.Text = "/BYTES :: Print sizes as bytes.";
+            chkBYTES.UseVisualStyleBackColor = true;
+            // 
             // tabJob
             // 
+            tabJob.AutoScroll = true;
+            tabJob.Controls.Add(txtIF);
+            tabJob.Controls.Add(txtSAVE);
+            tabJob.Controls.Add(txtJOB);
+            tabJob.Controls.Add(chkIF);
+            tabJob.Controls.Add(chkNODD);
+            tabJob.Controls.Add(chkNOSD);
+            tabJob.Controls.Add(chkQUIT);
+            tabJob.Controls.Add(chkSAVE);
+            tabJob.Controls.Add(chkJOB);
             tabJob.Location = new Point(4, 24);
             tabJob.Name = "tabJob";
             tabJob.Size = new Size(705, 175);
             tabJob.TabIndex = 5;
             tabJob.Text = "Job";
             tabJob.UseVisualStyleBackColor = true;
+            // 
+            // txtIF
+            // 
+            txtIF.Location = new Point(41, 235);
+            txtIF.Name = "txtIF";
+            txtIF.PlaceholderText = "filter[s]";
+            txtIF.Size = new Size(226, 23);
+            txtIF.TabIndex = 12;
+            // 
+            // txtSAVE
+            // 
+            txtSAVE.Location = new Point(41, 99);
+            txtSAVE.Name = "txtSAVE";
+            txtSAVE.PlaceholderText = "jobname";
+            txtSAVE.Size = new Size(226, 23);
+            txtSAVE.TabIndex = 7;
+            // 
+            // txtJOB
+            // 
+            txtJOB.Location = new Point(41, 40);
+            txtJOB.Name = "txtJOB";
+            txtJOB.PlaceholderText = "jobname";
+            txtJOB.Size = new Size(226, 23);
+            txtJOB.TabIndex = 6;
+            // 
+            // chkIF
+            // 
+            chkIF.AutoSize = true;
+            chkIF.Location = new Point(6, 209);
+            chkIF.Name = "chkIF";
+            chkIF.Size = new Size(193, 19);
+            chkIF.TabIndex = 5;
+            chkIF.Text = "/IF :: Include the following Files.";
+            chkIF.UseVisualStyleBackColor = true;
+            // 
+            // chkNODD
+            // 
+            chkNODD.AutoSize = true;
+            chkNODD.Location = new Point(6, 184);
+            chkNODD.Name = "chkNODD";
+            chkNODD.Size = new Size(273, 19);
+            chkNODD.TabIndex = 4;
+            chkNODD.Text = "/NODD :: NO Destination Directory is specified.";
+            chkNODD.UseVisualStyleBackColor = true;
+            // 
+            // chkNOSD
+            // 
+            chkNOSD.AutoSize = true;
+            chkNOSD.Location = new Point(6, 161);
+            chkNOSD.Name = "chkNOSD";
+            chkNOSD.Size = new Size(247, 19);
+            chkNOSD.TabIndex = 3;
+            chkNOSD.Text = "/NOSD :: NO Source Directory is specified.";
+            chkNOSD.UseVisualStyleBackColor = true;
+            // 
+            // chkQUIT
+            // 
+            chkQUIT.AutoSize = true;
+            chkQUIT.Location = new Point(6, 136);
+            chkQUIT.Name = "chkQUIT";
+            chkQUIT.Size = new Size(378, 19);
+            chkQUIT.TabIndex = 2;
+            chkQUIT.Text = "/QUIT :: QUIT after processing command line (to view parameters).";
+            chkQUIT.UseVisualStyleBackColor = true;
+            // 
+            // chkSAVE
+            // 
+            chkSAVE.AutoSize = true;
+            chkSAVE.Location = new Point(6, 73);
+            chkSAVE.Name = "chkSAVE";
+            chkSAVE.Size = new Size(323, 19);
+            chkSAVE.TabIndex = 1;
+            chkSAVE.Text = "/SAVE:jobname :: SAVE parameters to the named job file.";
+            chkSAVE.UseVisualStyleBackColor = true;
+            // 
+            // chkJOB
+            // 
+            chkJOB.AutoSize = true;
+            chkJOB.Location = new Point(6, 15);
+            chkJOB.Name = "chkJOB";
+            chkJOB.Size = new Size(331, 19);
+            chkJOB.TabIndex = 0;
+            chkJOB.Text = "/JOB:jobname :: take parameters from the named JOB file.";
+            chkJOB.UseVisualStyleBackColor = true;
             // 
             // tabRemarks
             // 
@@ -1619,10 +1965,11 @@ namespace Grobocopy
             // 
             // grpOutput
             // 
-            grpOutput.Controls.Add(button1);
+            grpOutput.Controls.Add(btnAbout);
+            grpOutput.Controls.Add(btnCopy);
             grpOutput.Controls.Add(txtCommand);
             grpOutput.Controls.Add(btnPreview);
-            grpOutput.Controls.Add(btnStartCopy);
+            grpOutput.Controls.Add(btnStart);
             grpOutput.Controls.Add(txtOutput);
             grpOutput.Dock = DockStyle.Fill;
             grpOutput.Location = new Point(0, 0);
@@ -1633,16 +1980,27 @@ namespace Grobocopy
             grpOutput.TabStop = false;
             grpOutput.Text = "Output";
             // 
-            // button1
+            // btnAbout
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Location = new Point(657, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(61, 23);
-            button1.TabIndex = 11;
-            button1.Text = "Copy";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAbout.Location = new Point(14, 350);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Size = new Size(75, 23);
+            btnAbout.TabIndex = 11;
+            btnAbout.Text = "About";
+            btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
+            // 
+            // btnCopy
+            // 
+            btnCopy.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCopy.Location = new Point(657, 30);
+            btnCopy.Name = "btnCopy";
+            btnCopy.Size = new Size(61, 23);
+            btnCopy.TabIndex = 11;
+            btnCopy.Text = "Copy";
+            btnCopy.UseVisualStyleBackColor = true;
+            btnCopy.Click += btnCopy_Click;
             // 
             // txtCommand
             // 
@@ -1659,24 +2017,13 @@ namespace Grobocopy
             // btnPreview
             // 
             btnPreview.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnPreview.Location = new Point(527, 350);
+            btnPreview.Location = new Point(562, 349);
             btnPreview.Name = "btnPreview";
             btnPreview.Size = new Size(75, 23);
             btnPreview.TabIndex = 10;
             btnPreview.Text = "Preview";
             btnPreview.UseVisualStyleBackColor = true;
             btnPreview.Click += btnPreview_Click;
-            // 
-            // btnAbout
-            // 
-            btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAbout.Location = new Point(29, 654);
-            btnAbout.Name = "btnAbout";
-            btnAbout.Size = new Size(75, 23);
-            btnAbout.TabIndex = 11;
-            btnAbout.Text = "About";
-            btnAbout.UseVisualStyleBackColor = true;
-            btnAbout.Click += btnAbout_Click;
             // 
             // splitContainer
             // 
@@ -1696,238 +2043,9 @@ namespace Grobocopy
             splitContainer.SplitterDistance = 300;
             splitContainer.TabIndex = 12;
             // 
-            // chkFP
-            // 
-            chkFP.AutoSize = true;
-            chkFP.Location = new Point(13, 88);
-            chkFP.Name = "chkFP";
-            chkFP.Size = new Size(287, 19);
-            chkFP.TabIndex = 20;
-            chkFP.Text = "/FP :: include Full Pathname of files in the output.";
-            chkFP.UseVisualStyleBackColor = true;
-            // 
-            // chkTS
-            // 
-            chkTS.AutoSize = true;
-            chkTS.Location = new Point(13, 69);
-            chkTS.Name = "chkTS";
-            chkTS.Size = new Size(299, 19);
-            chkTS.TabIndex = 19;
-            chkTS.Text = "/TS :: include source file Time Stamps in the output.";
-            chkTS.UseVisualStyleBackColor = true;
-            // 
-            // chkV
-            // 
-            chkV.AutoSize = true;
-            chkV.Location = new Point(13, 50);
-            chkV.Name = "chkV";
-            chkV.Size = new Size(299, 19);
-            chkV.TabIndex = 18;
-            chkV.Text = "/V :: produce Verbose output, showing skipped files.";
-            chkV.UseVisualStyleBackColor = true;
-            // 
-            // chkX
-            // 
-            chkX.AutoSize = true;
-            chkX.Location = new Point(13, 31);
-            chkX.Name = "chkX";
-            chkX.Size = new Size(278, 19);
-            chkX.TabIndex = 17;
-            chkX.Text = "/X :: report all eXtra files, not just those selected.";
-            chkX.UseVisualStyleBackColor = true;
-            // 
-            // chkL
-            // 
-            chkL.AutoSize = true;
-            chkL.Location = new Point(13, 12);
-            chkL.Name = "chkL";
-            chkL.Size = new Size(322, 19);
-            chkL.TabIndex = 16;
-            chkL.Text = "/L :: List only - don't copy, timestamp or delete any files.";
-            chkL.UseVisualStyleBackColor = true;
-            // 
-            // chkNFL
-            // 
-            chkNFL.AutoSize = true;
-            chkNFL.Location = new Point(13, 166);
-            chkNFL.Name = "chkNFL";
-            chkNFL.Size = new Size(241, 19);
-            chkNFL.TabIndex = 15;
-            chkNFL.Text = "/NFL :: No File List - don't log file names.";
-            chkNFL.UseVisualStyleBackColor = true;
-            // 
-            // chkNC
-            // 
-            chkNC.AutoSize = true;
-            chkNC.Location = new Point(13, 145);
-            chkNC.Name = "chkNC";
-            chkNC.Size = new Size(226, 19);
-            chkNC.TabIndex = 14;
-            chkNC.Text = "/NC :: No Class - don't log file classes.";
-            chkNC.UseVisualStyleBackColor = true;
-            // 
-            // chkNS
-            // 
-            chkNS.AutoSize = true;
-            chkNS.Location = new Point(13, 126);
-            chkNS.Name = "chkNS";
-            chkNS.Size = new Size(205, 19);
-            chkNS.TabIndex = 13;
-            chkNS.Text = "/NS :: No Size - don't log file sizes.";
-            chkNS.UseVisualStyleBackColor = true;
-            // 
-            // chkBYTES
-            // 
-            chkBYTES.AutoSize = true;
-            chkBYTES.Location = new Point(13, 107);
-            chkBYTES.Name = "chkBYTES";
-            chkBYTES.Size = new Size(176, 19);
-            chkBYTES.TabIndex = 12;
-            chkBYTES.Text = "/BYTES :: Print sizes as bytes.";
-            chkBYTES.UseVisualStyleBackColor = true;
-            // 
-            // chkETA
-            // 
-            chkETA.AutoSize = true;
-            chkETA.Location = new Point(13, 233);
-            chkETA.Name = "chkETA";
-            chkETA.Size = new Size(307, 19);
-            chkETA.TabIndex = 23;
-            chkETA.Text = "/ETA :: show Estimated Time of Arrival of copied files.";
-            chkETA.UseVisualStyleBackColor = true;
-            // 
-            // chkNP
-            // 
-            chkNP.AutoSize = true;
-            chkNP.Location = new Point(13, 211);
-            chkNP.Name = "chkNP";
-            chkNP.Size = new Size(306, 19);
-            chkNP.TabIndex = 22;
-            chkNP.Text = "/NP :: No Progress - don't display percentage copied.";
-            chkNP.UseVisualStyleBackColor = true;
-            // 
-            // chkNDL
-            // 
-            chkNDL.AutoSize = true;
-            chkNDL.Location = new Point(13, 189);
-            chkNDL.Name = "chkNDL";
-            chkNDL.Size = new Size(304, 19);
-            chkNDL.TabIndex = 21;
-            chkNDL.Text = "/NDL :: No Directory List - don't log directory names.";
-            chkNDL.UseVisualStyleBackColor = true;
-            // 
-            // chkLOG
-            // 
-            chkLOG.AutoSize = true;
-            chkLOG.Location = new Point(13, 258);
-            chkLOG.Name = "chkLOG";
-            chkLOG.Size = new Size(340, 19);
-            chkLOG.TabIndex = 24;
-            chkLOG.Text = "/LOG:file :: output status to LOG file (overwrite existing log).";
-            chkLOG.UseVisualStyleBackColor = true;
-            // 
-            // chkLOGAPPEND
-            // 
-            chkLOGAPPEND.AutoSize = true;
-            chkLOGAPPEND.Location = new Point(13, 310);
-            chkLOGAPPEND.Name = "chkLOGAPPEND";
-            chkLOGAPPEND.Size = new Size(353, 19);
-            chkLOGAPPEND.TabIndex = 25;
-            chkLOGAPPEND.Text = "/LOG+:file :: output status to LOG file (append to existing log).";
-            chkLOGAPPEND.UseVisualStyleBackColor = true;
-            // 
-            // chkUNILOG
-            // 
-            chkUNILOG.AutoSize = true;
-            chkUNILOG.Location = new Point(13, 367);
-            chkUNILOG.Name = "chkUNILOG";
-            chkUNILOG.Size = new Size(428, 19);
-            chkUNILOG.TabIndex = 26;
-            chkUNILOG.Text = "/UNILOG:file :: output status to LOG file as UNICODE (overwrite existing log).";
-            chkUNILOG.UseVisualStyleBackColor = true;
-            // 
-            // chkUNILOGAPPEND
-            // 
-            chkUNILOGAPPEND.AutoSize = true;
-            chkUNILOGAPPEND.Location = new Point(13, 419);
-            chkUNILOGAPPEND.Name = "chkUNILOGAPPEND";
-            chkUNILOGAPPEND.Size = new Size(441, 19);
-            chkUNILOGAPPEND.TabIndex = 27;
-            chkUNILOGAPPEND.Text = "/UNILOG+:file :: output status to LOG file as UNICODE (append to existing log).";
-            chkUNILOGAPPEND.UseVisualStyleBackColor = true;
-            // 
-            // txtLOG
-            // 
-            txtLOG.Location = new Point(35, 281);
-            txtLOG.Name = "txtLOG";
-            txtLOG.Size = new Size(331, 23);
-            txtLOG.TabIndex = 28;
-            // 
-            // txtLOGAPPEND
-            // 
-            txtLOGAPPEND.Location = new Point(35, 333);
-            txtLOGAPPEND.Name = "txtLOGAPPEND";
-            txtLOGAPPEND.Size = new Size(331, 23);
-            txtLOGAPPEND.TabIndex = 29;
-            // 
-            // txtUNILOG
-            // 
-            txtUNILOG.Location = new Point(35, 389);
-            txtUNILOG.Name = "txtUNILOG";
-            txtUNILOG.Size = new Size(331, 23);
-            txtUNILOG.TabIndex = 30;
-            // 
-            // txtUNILOGAPPEND
-            // 
-            txtUNILOGAPPEND.Location = new Point(35, 441);
-            txtUNILOGAPPEND.Name = "txtUNILOGAPPEND";
-            txtUNILOGAPPEND.Size = new Size(331, 23);
-            txtUNILOGAPPEND.TabIndex = 31;
-            // 
-            // chkTEE
-            // 
-            chkTEE.AutoSize = true;
-            chkTEE.Location = new Point(13, 482);
-            chkTEE.Name = "chkTEE";
-            chkTEE.Size = new Size(318, 19);
-            chkTEE.TabIndex = 32;
-            chkTEE.Text = "/TEE :: output to console window, as well as the log file.";
-            chkTEE.UseVisualStyleBackColor = true;
-            // 
-            // chkNJH
-            // 
-            chkNJH.AutoSize = true;
-            chkNJH.Location = new Point(13, 507);
-            chkNJH.Name = "chkNJH";
-            chkNJH.Size = new Size(146, 19);
-            chkNJH.TabIndex = 33;
-            chkNJH.Text = "/NJH :: No Job Header.";
-            chkNJH.UseVisualStyleBackColor = true;
-            // 
-            // chkNJS
-            // 
-            chkNJS.AutoSize = true;
-            chkNJS.Location = new Point(13, 532);
-            chkNJS.Name = "chkNJS";
-            chkNJS.Size = new Size(156, 19);
-            chkNJS.TabIndex = 34;
-            chkNJS.Text = "/NJS :: No Job Summary.";
-            chkNJS.UseVisualStyleBackColor = true;
-            // 
-            // chkUNICODE
-            // 
-            chkUNICODE.AutoSize = true;
-            chkUNICODE.Location = new Point(13, 557);
-            chkUNICODE.Name = "chkUNICODE";
-            chkUNICODE.Size = new Size(235, 19);
-            chkUNICODE.TabIndex = 35;
-            chkUNICODE.Text = "/UNICODE :: output status as UNICODE.";
-            chkUNICODE.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             ClientSize = new Size(732, 689);
-            Controls.Add(btnAbout);
             Controls.Add(splitContainer);
             Name = "MainForm";
             Text = "Grobocopy";
@@ -1947,6 +2065,8 @@ namespace Grobocopy
             tabRetry.PerformLayout();
             tabLogging.ResumeLayout(false);
             tabLogging.PerformLayout();
+            tabJob.ResumeLayout(false);
+            tabJob.PerformLayout();
             tabRemarks.ResumeLayout(false);
             tabRemarks.PerformLayout();
             grpOutput.ResumeLayout(false);
@@ -1958,7 +2078,7 @@ namespace Grobocopy
             ResumeLayout(false);
         }
 
-        private async void btnStartCopy_Click(object sender, EventArgs e)
+        private async void btnStart_Click(object sender, EventArgs e)
         {
             string source = txtSource.Text;
             string destination = txtDestination.Text;
@@ -2000,16 +2120,21 @@ namespace Grobocopy
 
         private string getArguments()
         {
-            string source = txtSource.Text;
-            string destination = txtDestination.Text;
+            string arguments = "";
 
-            if (string.IsNullOrWhiteSpace(source) || string.IsNullOrWhiteSpace(destination))
+            // Source folder
+            string source = txtSource.Text;
+            if (!string.IsNullOrWhiteSpace(source))
             {
-                return "-1";
+                arguments = $"\"{source}\"";
             }
 
-            // Base arguments
-            string arguments = $"\"{source}\" \"{destination}\"";
+            // Destination folder
+            string destination = txtDestination.Text;
+            if (!string.IsNullOrWhiteSpace(destination))
+            {
+                arguments += $" \"{destination}\"";
+            }
 
             // Copy options
             if (chkS.Checked)
@@ -2388,6 +2513,31 @@ namespace Grobocopy
                 arguments += " /UNICODE";
             }
 
+            // Job
+            if (chkJOB.Checked)
+            {
+                arguments += " /JOB:" + txtJOB.Text;
+            }
+            if (chkSAVE.Checked)
+            {
+                arguments += " /SAVE:" + txtSAVE.Text;
+            }
+            if (chkQUIT.Checked)
+            {
+                arguments += " /QUIT";
+            }
+            if (chkNOSD.Checked)
+            {
+                arguments += " /NOSD";
+            }
+            if (chkNODD.Checked)
+            {
+                arguments += " /NODD";
+            }
+            if (chkIF.Checked)
+            {
+                arguments += " /IF " + txtIF.Text;
+            }
 
 
 
@@ -2416,7 +2566,7 @@ namespace Grobocopy
         private TextBox txtCommand;
         private Button btnPreview;
         private Button btnAbout;
-        private Button btnStartCopy;
+        private Button btnStart;
         private CheckBox chkE;
         private CheckBox chkS;
         private NumericUpDown numLev;
@@ -2452,7 +2602,7 @@ namespace Grobocopy
         private CheckBox chkIPG;
         private CheckBox chkSJ;
         private CheckBox chkSL;
-        private Label label3;
+        private Label lblMT;
         private CheckBox chkNOOFFLOAD;
         private CheckBox chkCOMPRESS;
         private CheckBox chkNOCLONE;
@@ -2476,21 +2626,13 @@ namespace Grobocopy
         private TabPage tabJob;
         private TabPage tabRemarks;
 
-        //get version
-        private string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-
-
+        
         private void btnPreview_Click(object sender, EventArgs e)
         {
 
             txtCommand.Text = "";
             string arguments = getArguments();
 
-            if (arguments == "-1")
-            {
-                MessageBox.Show("Please select both source and destination directories.");
-                return;
-            }
 
             txtCommand.Text = "robocopy " + arguments;
 
@@ -2498,7 +2640,10 @@ namespace Grobocopy
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Grobocopy v" + version + "\n\nA simple GUI for Robocopy.\n\nCreated by Dan MacCormac\n\nGitHub: https://www.github.com/dmaccormac", "About Grobocopy", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            using (AboutForm aboutBox = new AboutForm())
+            {
+                aboutBox.ShowDialog(this);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -2506,11 +2651,12 @@ namespace Grobocopy
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCopy_Click(object sender, EventArgs e)
         {
             // Copy to clipboard
             Clipboard.SetText(txtCommand.Text);
-            
+
         }
+
     }
 }

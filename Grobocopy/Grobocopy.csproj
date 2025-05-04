@@ -6,8 +6,33 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <FileVersion>0.6.0</FileVersion>
-    <AssemblyVersion>0.6.0</AssemblyVersion>
+    <FileVersion>0.7.0</FileVersion>
+    <AssemblyVersion>0.7.0</AssemblyVersion>
+    <Description></Description>
+    <Company>Dan MacCormac</Company>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\github-icon1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
 
 </Project>
