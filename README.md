@@ -3,7 +3,7 @@
 
 Grobocopy is a graphical user interface (GUI) for the robocopy command-line tool. Robocopy is a powerful tool that can copy files and directories between local and remote locations, with many options to customize the operation. It is especially useful for backing up data, synchronizing folders, and migrating files across different drives or networks.
 
-![Screenshot](https://github.com/dmaccormac/Grobocopy/blob/main/Grobocopy/Resources/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/dmaccormac/Grobocopy/refs/heads/main/Grobocopy/Resources/Screenshot.png)
 
 ## Features
 - Easily browse and select source and destination folders.
