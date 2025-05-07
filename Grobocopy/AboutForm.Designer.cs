@@ -42,7 +42,7 @@
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(196, 45);
             lblDescription.TabIndex = 0;
-            lblDescription.Text = "Grobocopy v0.7\r\nA simple GUI for Robocopy\r\nCopyright (c) 2025 Dan MacCormac";
+            lblDescription.Text = "Grobocopy v0.7.1\r\nA simple GUI for Robocopy\r\nCopyright (c) 2025 Dan MacCormac";
             // 
             // lnkGithub
             // 
